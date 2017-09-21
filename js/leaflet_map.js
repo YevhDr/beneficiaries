@@ -23,8 +23,8 @@
 
 
     map.setView({ lat: 49, lng: 32 }, 5);
-    // control that shows state info on hover
 
+    // control that shows state info on hover
     var info = L.control();
 
     info.onAdd = function (map) {
@@ -44,8 +44,7 @@
 
     // get color depending on population density value
     function getColor(d) {
-        return d > 200  ? '#E31A1C' :
-                    d > 100  ? '#FC4E2A' :
+        return d > 100  ? '#FC4E2A' :
                         d > 50   ? '#FD8D3C' :
                             d > 20   ? '#FEB24C' :
                                 d > 10   ? '#FED976' :
@@ -110,7 +109,7 @@
 //        layer.bindPopup(layer.feature.properties.name);
 //    });
 //
-    map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+//     map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
 
     var legend = L.control({position: 'bottomright'});
@@ -118,7 +117,7 @@
     legend.onAdd = function (map) {
 
         var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 10, 20, 50, 100, 200],
+            grades = [0, 10, 20, 50, 100],
             labels = [],
             from, to;
 

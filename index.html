@@ -2,18 +2,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.">
     <meta name="author" content="">
-
     <title>Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?</title>
-
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Base CSS for header and footer-->
-    <link href="css/application.css" rel="stylesheet">
 
     <!-- OpenGraph Meta Tags -->
     <meta property="og:site_name" content="ТЕКСТИ.ORG.UA"/>
@@ -24,7 +18,6 @@
     <meta property="og:description"
           content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу."/>
     <meta property="og:url" content="http://texty.org.ua/d/static/2017/gidroper/"/>
-
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:site" content="@textyorgua"/>
@@ -42,31 +35,34 @@
     <meta name="title" content="Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?">
     <meta name="description"
           content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800&subset=cyrillic,latin' rel='stylesheet'
           type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
+    <!-- Leaflet Links -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-    <script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/714A9591-421E-C14F-922E-7BDC814DF07C/main.js" charset="UTF-8"></script><script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
 
-    <!-- Base CSS for header and footer-->
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/application.css" rel="stylesheet">
-    <head>
+
 
     </head>
 
+
+
     <style>
-        #map { max-width: 650px;
-            height: 400px;
-            margin-bottom: 25px;
+        #map {
+            position: relative;
+            max-width: 800px;
+            height: 500px;
+            margin-bottom: 25px
 
         }
         .info {
@@ -92,34 +88,35 @@
     </style>
 
 
-</head>
-
 <body>
 
-<div class="row logo-buttons" style="width:100%;">
-    <div class="col-lg-2 col-md-2 col-sm-2  col-xs-4">
-        <a href="http://texty.org.ua"><img class="img-responsive logo" src="img/logo.png"></a>
-    </div>
-    <div class="col-lg-1 col-lg-offset-9 col-md-1 col-md-offset-9 col-sm-2 col-sm-offset-8 col-xs-2 col-xs-offset-6">
-        <div class="social-icons">
-            <a href="https://twitter.com/intent/tweet?text=http://texty.org.ua/d/static/2017/gidroper/" class="share-btn"><i
-                    class="fa fa-twitter fa-fw fa-2x social-tw"></i></a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/static/2017/gidroper/" class="share-btn"><i
-                    class="fa fa-facebook fa-fw fa-2x social-fb"></i></a>
-        </div>
-    </div>
-</div>
+
 
 <div class="header">
+    <div class="row logo-buttons" style="width:100%;">
+        <div class="col-lg-2 col-md-2 col-sm-2  col-xs-4">
+            <a href="http://texty.org.ua"><img class="img-responsive logo" src="img/logo.png"></a>
+        </div>
+        <div class="col-lg-1 col-lg-offset-9 col-md-1 col-md-offset-9 col-sm-2 col-sm-offset-8 col-xs-2 col-xs-offset-6">
+            <div class="social-icons">
+                <a href="https://twitter.com/intent/tweet?text=http://texty.org.ua/d/static/2017/gidroper/" class="share-btn"><i
+                        class="fa fa-twitter fa-fw fa-2x social-tw"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/static/2017/gidroper/" class="share-btn"><i
+                        class="fa fa-facebook fa-fw fa-2x social-fb"></i></a>
+            </div>
+        </div>
+    </div>
 
-    <h1>Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?</h1>
-
-    <h3>Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.</h3>
 
 </div>
 
 <div class="container">
 <div class="row">
+<h1>Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?</h1>
+
+<h3>Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.
+</h3>
+
 
 <h2>Як встановлювали зв’язок</h2>
 <p>Депутат може отримувати гроші від юридичної особи, повністю або частково володіти нею, бути винен їй гроші, або ж навпаки – позичати їх. В будь-якому разі він зобов’язаний вказувати цих юридичних осіб в своїй електронній декларації.</p>
@@ -144,25 +141,122 @@
 </p>
 <p>Рінат Ахметов тут є найяскравішим прикладом. Хоча в “Опозиційного Блоку” лише 10% мандатів, 44% депутатів, пов’язаних із компанією Ахметова належать саме до цієї партії.
 </p>
+    <img class="picture" src="img/heatmap-01.jpg">
 <p>Інший приклад – Аграрна Партія. Серед депутатів, пов’язаних із компаніями Олександра Буряка, 74% обиралися саме від цієї партії. А власник холдингу “Астарта” Віктор Іванчик пов’язаний із 85 депутатами, з яких третина обиралася від “аграріїв”. Обидва – і Буряк, і Іванчик – також фінансували саму Аграрну Партію. Окрім цього, 12% депутатів один з головних аграріїв країни Андрієм Веревським також балотувалися від Аграрної Партії. При цьому в аграріїв лише 5% від загального числа мандатів.
 </p>
 
 <h2>Регіональний розподіл</h2>
 <p>Окрім пов’язаності із партіями, дані що ми проаналізували, показують також регіональну специфіку бізнесу. Окрім таких очевидних прикладів, як Петро Порошенко, чиї компанії здебільшого платять депутатам з Вінницької області, або Рінат Ахметов, від компаній якого отримують гроші здебільшого депутати Донецької області та інших промислових регіонів, можна також навести приклад Агрохолдінгу “Мрія”, яка базується у Тернопільській області – і саме там найбільше депутатів, які отримують кошти від холдингу.
 </p>
+<!--</div>-->
+<!--</div>-->
+
 <div id='map'></div>
+
+<!--<div class="container">-->
+<!--<div class="row">-->
 <p>Замість підтримувати великі партії, окремі бізнесмени надають перевагу малим регіональним. Депутати партії “Поруч”, очолюваної Сергієм Лабазюком, переважно отримують гроші саме від його компаній. Власник “Нашої Ряби” Юрій Косюк  та агрохолдінг LNZ Group найбільше представлені в регіональній партії “Черкащани” - яка, зрозуміло, має представництво лише у Черкаській області.</p>
 
 <h2>Обмеження</h2>
 <p>Ці дані, утім, не дають повної картини зв’язку між виборною владою та бізнесом. По-перше, електронні декларації заповнюють самі депутати. А вони можуть випадково чи навмисно зробити в них помилку, або ж просто не вказувати “незручної” інформації – і небезпідставно сподіватися, що відповідальності за брехню вдасться уникнути. По-друге, власники підприємств вигадали багато формально законних способів ховати свої активи – а отже, далеко не всі чесно вказують себе офіційно як кінцевого бенефіціара своїх підприємств.</p>
 <p>Однак, навіть ця неповна картина дає непоганий опис реального стану справ. Якби реєстр бенефіціарів та декларації депутатів були і досі закриті, ми не змогли б зробити це дослідження.
 </p>
+
 </div>
 </div>
 
 <script type="text/javascript" src="data/ukraine_qgis_new.js"></script>
 <script type="text/javascript" src="js/leaflet_map.js"></script>
 
+<!--footer-->
+<footer id="footer" class="container-fluid">
+    <div id="footer-wraper" class="wraper">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-md-3 col-sm-3 col-xs-12">
+            <h4>&copy; 2016, Тексти.org.ua</h4>
+            <h4>Медія для розумних</h4>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-md-3 col-sm-3 col-xs-3">
+            <ul class="links">
+                <li><a href="http://texty.org.ua/mod/article/index.php?ed=1">Вибір редакції</a>
+                    <a href="http://texty.org.ua/mod/article/?view=rss&amp;ed=1">(RSS)</a>
+                </li>
+                <li><a href="http://texty.org.ua/mod/video/">Відео</a>
+                    <a href="http://texty.org.ua/mod/video/?view=rss">(RSS)</a>
+                </li>
+                <li><a href="http://texty.org.ua/mod/article/">Статті</a>
+                    <a href="http://texty.org.ua/mod/article/?view=rss">(RSS)</a>
+                </li>
+                <li><a href="http://texty.org.ua/mod/news/">Новини</a>
+                    <a href="http://texty.org.ua/mod/news/?view=rss">(RSS)</a>
+                </li>
+                <li><a href="http://texty.org.ua/mod/blog/everyone.php">Блоги</a>
+                    <a href="http://texty.org.ua/mod/blog/blog_list.php?view=rss">(RSS)</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-md-3 col-sm-3 col-xs-3">
+            <ul class="links">
+                <li>
+                    <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BF%D1%86%D1%96%D1%8F">Концепції</a>
+                </li>
+                <li>
+                    <a href="http://texty.org.ua/mod/archive/tag.php?tag=%D1%80%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B8">Реформи</a>
+                </li>
+                <li><a href="http://texty.org.ua/mod/archive/tag.php?tag=%D0%B4%D0%BE%D1%81%D0%B2%D1%96%D0%B4">Важливий
+                    досвід</a></li>
+                <li><a href="http://texty.org.ua/mod/archive/tag.php?tag=%D1%96%D0%BD%D0%BE%D0%B7%D0%BC%D1%96">Найцікавіше
+                    з інозмі</a></li>
+                <li><a href="http://texty.org.ua/pg/blog/infoviz">Журналістика даних</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-md-3 col-sm-3 col-xs-3">
+            <ul class="links">
+                <li><a href="http://texty.org.ua/mod/pages/donate.php" class="support-site">Підтримай сайт
+                    фінансово!</a></li>
+                <li><a href="http://facebook.com/texty.org.ua">Ми у Фейсбуці</a></li>
+                <li><a href="http://twitter.com/textyorgua">Ми у Твітері</a></li>
+                <li><a href="http://texty.org.ua/pg/pages/view/22">Про нас</a></li>
+                <li><a href="http://texty.org.ua/mod/archive/">Архів</a></li>
+            </ul>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="copying-info">
+                Матеріали ТЕКСТИ.org.ua можна поширювати згідно з ліцензією Creative Commons з обов’язковим посиланням.
+                Велике прохання ставити гіперпосилання в першому чи другому абзаці вашого матеріалу.
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script src="lib/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="lib/bootstrap.min.js" type="text/javascript"></script>
+<script src="lib/d3.v4.parkings.min.js"></script>
+<script src="lib/d3-jetpack.js"></script>
+<script src="lib/moment.min.js"></script>
+<script src="lib/share-behavior.js"></script>
+
+
+<script src="js/mobile.js"></script>
+<script src="js/weirdo.js"></script>
+<script src="js/data.js"></script>
+<script src="js/breadcrumb.js"></script>
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18136548-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 
 
 
