@@ -5,8 +5,9 @@ library(stringr)
 library(dplyr)
 library(ggplot2)
 library(wesanderson)
+library(RColorBrewer)
 file <- "heatmap_data.csv"
-file2 <- "heatmap_data (1).csv"
+
 
 doc <- read.table(file, sep = ",", header = TRUE, encoding = "UTF-8")
 
@@ -15,7 +16,7 @@ doc$colors <- cut(doc$presentation,breaks = c(min(doc$presentation), -10, -5, -3
 
 p<-ggplot(doc, aes(x = party, y = bussinessman )) + 
   geom_tile(aes(fill = colors), colour = "white") +
-  scale_fill_brewer(palette = "Reds") +
+  scale_fill_brewer(palette = "Oranges") +
   
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
@@ -24,7 +25,7 @@ p<-ggplot(doc, aes(x = party, y = bussinessman )) +
         legend.key.width = unit(1, "cm"),
         axis.text.x = 
           element_text(angle=45, 
-          hjust = 1,vjust=1,size = 7))
+          hjust = 1,vjust=1,size = 8))
   
 ggsave("heatmap.svg", plot = p,  
        path = "D:/pages/beneficiaries/img", 
