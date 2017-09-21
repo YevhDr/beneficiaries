@@ -1,6 +1,6 @@
 var map = L.map('map', {
-    minZoom: 5,
-    maxZoom: 5
+    minZoom: 5.5,
+    maxZoom: 5.5
 });
 
     map.createPane('labels');
@@ -13,9 +13,14 @@ var map = L.map('map', {
 
     var cartodbAttribution = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
 
-    var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+    var positron = L.tileLayer('https://api.mapbox.com/styles/v1/evgeshadrozdova/cj7ulm1wk2a1z2rol5g150jid/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXZnZXNoYWRyb3pkb3ZhIiwiYSI6ImNqMjZuaGpkYTAwMXAzMm5zdGVvZ2c0OHYifQ.s8MMs2wW15ZyUfDhTS_cdQ', {
         attribution: cartodbAttribution
     }).addTo(map);
+
+
+    // var positron = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+    //     attribution: cartodbAttribution
+    // }).addTo(map);
 
     var positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
         attribution: cartodbAttribution,
@@ -25,7 +30,7 @@ var map = L.map('map', {
 
 
 
-    map.setView({ lat: 49, lng: 32 }, 5);
+    map.setView({ lat: 49, lng: 32 }, 5.5);
 
     // control that shows state info on hover
     var info = L.control();
@@ -37,7 +42,7 @@ var map = L.map('map', {
     };
 
     info.update = function (props) {
-        this._div.innerHTML = '<h4>Політика чи бізнес</h4>' +  (props ?
+        this._div.innerHTML = '<h4>Регіональні ставки</h4>' +  (props ?
                 '<b>' + props.name + '</b><br />'  + props.description
                 : 'Наведіть мишею на область');
     };
@@ -60,7 +65,7 @@ var map = L.map('map', {
             opacity: 1,
             color: 'white',
             dashArray: '3',
-            fillOpacity: 0.7,
+            fillOpacity: 0.9,
             fillColor: getColor(feature.properties.councillors)
         };
     }
@@ -72,7 +77,7 @@ var map = L.map('map', {
             weight: 2,
             color: '#666',
             dashArray: '',
-            fillOpacity: 0.7
+            fillOpacity: 0.9
         });
 
         if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {

@@ -12,12 +12,13 @@ file <- "heatmap_data.csv"
 doc <- read.table(file, sep = ",", header = TRUE, encoding = "UTF-8")
 
 
-doc$colors <- cut(doc$presentation,breaks = c(min(doc$presentation), -10, -5, -3, 0, 3, 5, 10, 15,40),right = FALSE)
+doc$colors <- cut(doc$presentation,breaks = 
+                  c(min(doc$presentation), -10, -5, -3, 0, 3, 5, 10, 15, 40),
+                  right = FALSE)
 
-p<-ggplot(doc, aes(x = party, y = bussinessman )) + 
+p <- ggplot(doc, aes(x = party, y = bussinessman )) + 
   geom_tile(aes(fill = colors), colour = "white") +
-  scale_fill_brewer(palette = "Oranges") +
-  
+  scale_fill_brewer(palette = "BrBG") +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         legend.position="bottom",

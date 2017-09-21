@@ -116,6 +116,36 @@ p, li {
 .support-site:visited {
   color: #FAA61A; }
 
+#map {
+  position: relative;
+  max-width: 800px;
+  height: 500px;
+  margin-bottom: 25px; }
+
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 5px; }
+
+.info h4 {
+  margin: 0 0 5px;
+  color: #777; }
+
+.legend {
+  text-align: left;
+  line-height: 18px;
+  color: #6d6e70; }
+
+.legend i {
+  width: 18px;
+  height: 10px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7; }
+
 html {
   position: relative;
   min-height: 100%; }
@@ -156,21 +186,20 @@ a.dotted {
   border-bottom: 1.5px dotted #ccc; }
 
 a:hover {
-  color: #FAA61A; }
+  color: #faa61a; }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 3em;
   line-height: 2.3em;
-  font-weight: bold;
-  color: #383e47;
-  margin-bottom: 0.5em; }
+  color: #faa61a;
+  font-weight: bold; }
 
 @media (max-width: 768px) {
   h1 {
     font-size: 2.2em; } }
 h2 {
-  font-size: 2em;
-  line-height: 1.8em;
+  font-size: 2.5em;
+  line-height: 1em;
   font-weight: bold; }
 
 @media (max-width: 768px) {
@@ -180,7 +209,7 @@ h3 {
   font-size: 1.8em;
   line-height: 2.2em;
   font-weight: normal;
-  color: #fff; }
+  color: #1c2124; }
 
 @media (max-width: 768px) {
   h3 {
@@ -238,24 +267,24 @@ p {
 
 .fa-facebook:hover,
 .fa-twitter:hover {
-  color: #FAA61A; }
+  color: #faa61a; }
 
 /* ======== Footer ======== */
 @media (max-width: 768px) {
   .p2 {
     display: none; } }
 h1 {
-  font-size: 5em;
+  font-size: 9em;
   line-height: 1em;
-  padding-top: 5%;
   width: 100%; }
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 3em;
+    font-size: 5em;
     padding-top: 3%; } }
 h2 {
-  width: 100%; }
+  width: 100%;
+  color: #faa61a; }
 
 h2 span {
   background: rgba(204, 196, 54, 0.9);
@@ -409,12 +438,38 @@ p.description_content {
   margin: 0px;
   font-size: 30px; }
 
-.container {
-  width: 60%;
-  margin-left: 20%; }
+@media (min-width: 0px) and (max-width: 480px) {
+  .container {
+    width: 80%; } }
+@media (min-width: 481px) {
+  .container {
+    width: 60%;
+    margin-left: 20%; } }
 
 .picture {
-  max-width: 80%; }
+  max-width: 100%;
+  margin-bottom: 25px; }
+
+.jumbotron {
+  padding-top: 0;
+  background-image: url("../img/oligarhy.jpg");
+  background-size: 100vw 37.8vw;
+  width: 100vw;
+  height: 37.8vw; }
+
+.collapse {
+  margin-bottom: 20px;
+  font-style: italic; }
+
+.small {
+  font-size: 1em; }
+
+.btn-info {
+  background-color: #faa61a;
+  color: #ffffff;
+  margin-bottom: 20px; }
+  .btn-info a:hover {
+    background-color: white; }
 
 /*# sourceMappingURL=application.css.map */
 
