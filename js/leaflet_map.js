@@ -1,4 +1,7 @@
-   var map = L.map('map');
+var map = L.map('map', {
+    minZoom: 5,
+    maxZoom: 5
+});
 
     map.createPane('labels');
 
