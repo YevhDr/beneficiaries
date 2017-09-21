@@ -1,6 +1,6 @@
 var map = L.map('map', {
-    minZoom: 5.5,
-    maxZoom: 5.5
+    minZoom: 5,
+    maxZoom: 5
 });
 
     map.createPane('labels');
@@ -30,7 +30,7 @@ var map = L.map('map', {
 
 
 
-    map.setView({ lat: 49, lng: 32 }, 5.5);
+    map.setView({ lat: 49, lng: 32 }, 5);
 
     // control that shows state info on hover
     var info = L.control();

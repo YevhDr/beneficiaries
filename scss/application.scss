@@ -8,7 +8,11 @@
   position: relative;
   max-width: 800px;
   height: 500px;
-  margin-bottom: 25px
+  margin-bottom: 25px;
+
+  @media (max-width:480px) {
+    height: 300px;
+  }
 
 }
 
@@ -90,11 +94,13 @@ h1 {
 
 h2 {
   font-size: 2.5em;
-  line-height: 1em;
-  font-weight: bold; }
-  @media (max-width: 768px) {
-    h2 {
-      font-size: 1.8em; } }
+  line-height: 1.2em;
+  font-weight: bold;
+    @media (max-width: 480px) {
+      font-size: 1.6em;
+      width:60%;
+    }
+  }
 
 h3 {
   font-size: 1.8em;
@@ -171,14 +177,13 @@ h1 {
   font-size: 9em;
 
   line-height: 1em;
-    width: 100%; }
-  @media (max-width: 768px) {
+    width: 90%; }
+  @media (max-width: 480px) {
     h1 {
-      font-size: 5em;
-      padding-top: 3%; } }
+      font-size: 4em;
+      padding-top: 10%; } }
 
 h2 {
-  width: 100%;
   color: #faa61a;
 
 }
@@ -191,9 +196,7 @@ h2 {
     color: #383e47;
     margin-top: -10px;
     width: 90%; }
-  @media (max-width: 768px) {
-    h2 {
-      font-size: 1.8em; } }
+
 
 h3 {
   text-align: center; }
@@ -354,8 +357,15 @@ p.description_content{
   padding-top: 0;
   background-image: url("../img/oligarhy.jpg");
   background-size: 100vw 37.8vw;
-  width: 100vw;
+  width: 100%;
   height: 37.8vw;
+
+  @media (max-width:480px) {
+    max-width: 490px;
+    height: 300px;
+    background-size: cover;
+
+  }
 
 }
 
@@ -372,9 +382,14 @@ p.description_content{
   background-color: #faa61a;
   color: #ffffff;
   margin-bottom: 20px;
+  border-color: #ffffff !important;
   a:hover {
     background-color: white;
   }
+}
+
+.btn.btn-info.collapsed {
+  border-color: #ffffff !important;
 }
 
 
