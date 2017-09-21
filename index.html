@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.">
+    <meta name="author" content="">
+
+    <title>Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Base CSS for header and footer-->
+    <link href="css/application.css" rel="stylesheet">
+
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:site_name" content="ТЕКСТИ.ORG.UA"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title"
+          content="Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?"/>
+    <meta property="og:image" content="http://texty.org.ua/d/static/2017/gidroper/img/DSCF7011.jpg"/>
+    <meta property="og:description"
+          content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу."/>
+    <meta property="og:url" content="http://texty.org.ua/d/static/2017/gidroper/"/>
+
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:site" content="@textyorgua"/>
+    <meta property="twitter:account_id" content="49572937"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:url" content="http://texty.org.ua/d/static/2017/gidroper/"/>
+    <meta name="twitter:title"
+          content="Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?"/>
+    <meta name="twitter:description"
+          content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу."/>
+    <meta name="twitter:image:src" content="http://texty.org.ua/d/static/2017/gidroper/img/DSCF7011.jpg"/>
+    <meta name="twitter:image:width" content="1200"/>
+    <meta name="twitter:image:height" content="630"/>
+    <!-- Other Meta Tags -->
+    <meta name="title" content="Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?">
+    <meta name="description"
+          content="Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800&subset=cyrillic,latin' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <script type="text/javascript" src="http://gc.kis.scr.kaspersky-labs.com/714A9591-421E-C14F-922E-7BDC814DF07C/main.js" charset="UTF-8"></script><script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Base CSS for header and footer-->
+    <link href="css/application.css" rel="stylesheet">
+    <head>
+
+    </head>
+
+    <style>
+        #map { max-width: 650px;
+            height: 400px;
+            margin-bottom: 25px;
+
+        }
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255,255,255,0.8);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            border-radius: 5px; }
+
+        .info h4 {
+            margin: 0 0 5px;
+            color: #777;
+        }
+
+        .legend {
+            text-align: left;
+            line-height: 18px;
+            color: #555;
+        }
+
+        .legend i { width: 18px; height: 10px; float: left; margin-right: 8px; opacity: 0.7; }
+    </style>
+
+
+</head>
+
+<body>
+
+<div class="row logo-buttons" style="width:100%;">
+    <div class="col-lg-2 col-md-2 col-sm-2  col-xs-4">
+        <a href="http://texty.org.ua"><img class="img-responsive logo" src="img/logo.png"></a>
+    </div>
+    <div class="col-lg-1 col-lg-offset-9 col-md-1 col-md-offset-9 col-sm-2 col-sm-offset-8 col-xs-2 col-xs-offset-6">
+        <div class="social-icons">
+            <a href="https://twitter.com/intent/tweet?text=http://texty.org.ua/d/static/2017/gidroper/" class="share-btn"><i
+                    class="fa fa-twitter fa-fw fa-2x social-tw"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=http://texty.org.ua/d/static/2017/gidroper/" class="share-btn"><i
+                    class="fa fa-facebook fa-fw fa-2x social-fb"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+
+    <h1>Люди олігархів. Депутати яких рад та партій пов’язані із відомими бізнесменами?</h1>
+
+    <h3>Завдяки відкритим даним про власників підприємств та електронним деклараціям можна прослідкувати зв’язок політики і бізнесу.</h3>
+
+</div>
+
+<div class="container">
+<div class="row">
+
+<h2>Як встановлювали зв’язок</h2>
+<p>Депутат може отримувати гроші від юридичної особи, повністю або частково володіти нею, бути винен їй гроші, або ж навпаки – позичати їх. В будь-якому разі він зобов’язаний вказувати цих юридичних осіб в своїй електронній декларації.</p>
+<p>В своєму аналізі ми брали до уваги всі ці ситуації – ігнорували лише дані банківські депозити та доходи від процентів з них. З місцевих депутатів враховували депутатів усіх рівнів, окрім сільських та селищних рад.</p>
+<p>Ми не робимо оцінок щодо етичності або конфлікту інтересів, але заради інформування …XXX.
+</p>
+
+<h2>З ким депутати пов’язані найбільше</h2>
+<p>Найбільше депутатів пов’язані із аграрним бізнесом. З ТОП-10 кінцевих бенефіціарів, з якими пов’язані місцеві депутати, 4 українські аграрії – Андрій Веревський (“Kernel”), Олег Бахматюк (“UkrLandFarming”),
+</p>
+<p>Віктор Іванчик (“Астарта”), Юрій Косюк (“Миронівський хлібопродукт”). Окрім них, в топі також власники американського агрохолдингу “NCH Capital” та Крістакіс Іаковідес з Кіпру, на якого зареєстрований агрохолдинг “Мрія”.
+</p>
+<p>Петро Порошенко увійшов до рейтингу теж завдяки своїм аграрним підприємствам.
+</p>
+<p>Єдині винятки – власник “Альфа-Банку” та “УкрСоцБанку” Михайло Фрідман, який вирвався на перше місце завдяки розданим депутатам кредитам, Сергій Тігіпко, в якого основними були страхові виплати, та Рінат Ахметов, від якого більшість депутатів отримували зарплату на промислових підприємствах.
+</p>
+<p>Щодо партійності депутатів,  пов’язаних із цими бізнесменами, то переважна більшість з них обиралися від “Блоку Петра Порошенка”, просто тому що від цієї партії пройшло  найбільше депутатів. Також багато депутатів отримують щось від Ріната Ахметова, - вони головним чином обрані від “Опозиційного Блоку”, а від Віктора Іванчика - депутати, які балотувалися від “Аграрної Партії”.
+</p>
+
+<h2>Коли це не тільки бізнес</h2>
+<p>Нас в першу чергу цікавлять випадки, коли олігархи платять непропорційно великій кількості депутатів від якоїсь партії, тоді є підозри що між ними існує зв’язок.
+</p>
+<p>Рінат Ахметов тут є найяскравішим прикладом. Хоча в “Опозиційного Блоку” лише 10% мандатів, 44% депутатів, пов’язаних із компанією Ахметова належать саме до цієї партії.
+</p>
+<p>Інший приклад – Аграрна Партія. Серед депутатів, пов’язаних із компаніями Олександра Буряка, 74% обиралися саме від цієї партії. А власник холдингу “Астарта” Віктор Іванчик пов’язаний із 85 депутатами, з яких третина обиралася від “аграріїв”. Обидва – і Буряк, і Іванчик – також фінансували саму Аграрну Партію. Окрім цього, 12% депутатів один з головних аграріїв країни Андрієм Веревським також балотувалися від Аграрної Партії. При цьому в аграріїв лише 5% від загального числа мандатів.
+</p>
+
+<h2>Регіональний розподіл</h2>
+<p>Окрім пов’язаності із партіями, дані що ми проаналізували, показують також регіональну специфіку бізнесу. Окрім таких очевидних прикладів, як Петро Порошенко, чиї компанії здебільшого платять депутатам з Вінницької області, або Рінат Ахметов, від компаній якого отримують гроші здебільшого депутати Донецької області та інших промислових регіонів, можна також навести приклад Агрохолдінгу “Мрія”, яка базується у Тернопільській області – і саме там найбільше депутатів, які отримують кошти від холдингу.
+</p>
+<div id='map'></div>
+<p>Замість підтримувати великі партії, окремі бізнесмени надають перевагу малим регіональним. Депутати партії “Поруч”, очолюваної Сергієм Лабазюком, переважно отримують гроші саме від його компаній. Власник “Нашої Ряби” Юрій Косюк  та агрохолдінг LNZ Group найбільше представлені в регіональній партії “Черкащани” - яка, зрозуміло, має представництво лише у Черкаській області.</p>
+
+<h2>Обмеження</h2>
+<p>Ці дані, утім, не дають повної картини зв’язку між виборною владою та бізнесом. По-перше, електронні декларації заповнюють самі депутати. А вони можуть випадково чи навмисно зробити в них помилку, або ж просто не вказувати “незручної” інформації – і небезпідставно сподіватися, що відповідальності за брехню вдасться уникнути. По-друге, власники підприємств вигадали багато формально законних способів ховати свої активи – а отже, далеко не всі чесно вказують себе офіційно як кінцевого бенефіціара своїх підприємств.</p>
+<p>Однак, навіть ця неповна картина дає непоганий опис реального стану справ. Якби реєстр бенефіціарів та декларації депутатів були і досі закриті, ми не змогли б зробити це дослідження.
+</p>
+</div>
+</div>
+
+<script type="text/javascript" src="data/ukraine_qgis_new.js"></script>
+<script type="text/javascript" src="js/leaflet_map.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
