@@ -149,12 +149,11 @@ h3 {
 p {
   font-size: 1.5em;
   line-height: 1.9em;
-  padding-bottom: 1em;
-}
+  }
 
 .container-fluid {
-  padding-right: 0px;
-  padding-left: 0px;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* ======== HEADER ======== */
@@ -468,6 +467,7 @@ p.description_content {
 
 .small {
   font-size: 1.2em;
+  width:90%;
 }
 
 .btn-info {
@@ -482,6 +482,10 @@ p.description_content {
 
 .btn.btn-info.collapsed {
   border-color: #ffffff !important;
+}
+
+h4 {
+  color:white;
 }
 
 /*# sourceMappingURL=application.css.map */
