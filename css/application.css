@@ -450,9 +450,9 @@ p.description_content {
     margin-left: 20%; } }
 
 .picture {
-  max-width: 100%;
+  max-width: 90%;
   margin-bottom: 25px; }
-  @media (min-width: 1025px) {
+  @media (min-width: 1200px) {
     .picture {
       width: 80%; } }
 
