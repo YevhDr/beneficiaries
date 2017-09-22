@@ -192,10 +192,22 @@ a:hover {
   color: #faa61a; }
 
 h1 {
-  font-size: 3em;
   line-height: 2.3em;
   color: #faa61a;
   font-weight: bold; }
+
+h1 {
+  line-height: 1em;
+  width: 90%; }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 4em;
+      padding-top: 10%; } }
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 12em;
+      margin-top: 20px;
+      margin-bottom: 20px; } }
 
 @media (max-width: 768px) {
   h1 {
@@ -277,15 +289,6 @@ p {
 @media (max-width: 768px) {
   .p2 {
     display: none; } }
-h1 {
-  font-size: 9em;
-  line-height: 1em;
-  width: 90%; }
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 4em;
-    padding-top: 10%; } }
 h2 {
   color: #faa61a; }
 
@@ -435,7 +438,7 @@ div.description {
 
 p.description_content {
   padding: 10px;
-  margin: 0px;
+  margin: 0;
   font-size: 30px; }
 
 @media (min-width: 0px) and (max-width: 480px) {
@@ -449,6 +452,9 @@ p.description_content {
 .picture {
   max-width: 100%;
   margin-bottom: 25px; }
+  @media (min-width: 1025px) {
+    .picture {
+      width: 80%; } }
 
 .jumbotron {
   padding-top: 0;
@@ -467,7 +473,7 @@ p.description_content {
   font-style: italic; }
 
 .small {
-  font-size: 1em; }
+  font-size: 1.2em; }
 
 .btn-info {
   background-color: #faa61a;
