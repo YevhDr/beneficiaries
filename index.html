@@ -191,10 +191,11 @@
             13% депутатів, пов’язаних із ним, були обрані Аграрної Партії. При цьому в аграріїв лише 5% від загального
             числа мандатів. </p>
 
-        <h4>Партійні ставки</h4>
-        <h5>Зелений колір вказує на високу ймовірність підтримки, <br/> червоний - на уникання співпраці</h5>
+        <h5>Партійні ставки</h5>
+        <h6>Зелений колір вказує на високу ймовірність підтримки, <br/> червоний - на уникання співпраці</h6>
         <div class="heatmap"></div>
         <!--<img class="picture" src="img/graph-01.jpg">-->
+        <p class="small"><i>Джерело: дані про бенефіціарів з реєстру юридичних та фізичних осіб, електронні декларації</i></p>
 
         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Докладніше про методологію
         </button>
@@ -278,13 +279,13 @@
     if (x < 400)  {
 
         var itemSize = x / 20;
-        var height = 350;
+        var height = 300;
     } else if (x > 400 && x < 700)  {
         var itemSize = x / 35;
         var height = 300;
     } else if (x > 700 && x < 1000)  {
         var itemSize = x / 40;
-        var height = 350;
+        var height = 300;
     }
 
 
@@ -296,7 +297,7 @@
 
 
      var cellSize = itemSize - 1,
-         margin = {top: 90, right: 0, bottom: 20, left: x / 5};
+         margin = {top: 90, right: 0, bottom: -20, left: 80};
 
     d3.csv('data/heatmap_d3.csv', function ( response ) {
 
@@ -344,7 +345,7 @@
 
         var svg = d3.select('div.heatmap')
             .append("svg")
-            .attr("width", width)
+            .attr("width", width - 100)
             .attr("height", height)
             .attr("overflow", "visible")
             .append("g")

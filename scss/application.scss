@@ -467,14 +467,17 @@ p.description_content {
 }
 
 .small {
+  width: 40%;
+  margin-top: -30px;
   font-size: 1.2em;
-  width:90%;
+  color: #8E8F91;
+
 }
 
 .btn-info {
-  background-color: #faa61a;
+  background-color: #8e8f91;
   color: #ffffff;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   border-color: #ffffff !important;
   a:hover {
     background-color: white;
@@ -508,14 +511,14 @@ svg {
 
 }
 
-h4 {
+h5 {
   margin-top: 30px;
   color: #5dc32c !important;
   font-size: 2em;
   font-weight: bold;
 }
 
-h5 {
+h6 {
   margin-top: 10px;
   color: #8e8f91 !important;
   font-size: 1.7em;
