@@ -55,6 +55,10 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/application.css" rel="stylesheet">
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
 
 
 </head>
@@ -62,9 +66,59 @@
 
 <style>
 
+    /*svg {*/
+        /*background-color: #1c2124;*/
+    /*}*/
+
+    rect {
+        stroke: #E6E6E6;
+        stroke-width: 1.5px;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: none;
+    }
+
+    .d3-tip {
+        line-height: 1;
+        font: 14px sans-serif;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: rgb(185, 185, 185);
+        border-radius: 2px;
+    }
+
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+    }
+
+    /* Style northward tooltips differently */
+    .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+    }
+
+    #chart {
+        width: 100%;
+        height: 100%;
+        min-width: 500px;
+        min-height: 500px;
+        position: absolute;
+    }
+
 </style>
-
-
 <body>
 <div class="header">
     <div class="row logo-buttons" style="width:100%;">
@@ -114,6 +168,8 @@
             ситуація, коли досягши якихось кар’єрних вершин у місцевій філії працівник вирішує зайнятися ще й
             політикою.</p>
 
+
+
         <h2>Тісніше нікуди</h2>
         <p>Та є ряд випадків, коли звʼязок між великою компанією та депутатами є особливим.</p>
         <p>Як правило депутати, котрі так чи інакше пов’язані своїми фінансами із компаніями олігархів, “розмазані” по
@@ -135,7 +191,10 @@
             13% депутатів, пов’язаних із ним, були обрані Аграрної Партії. При цьому в аграріїв лише 5% від загального
             числа мандатів. </p>
 
-        <img class="picture" src="img/graph-01.jpg">
+        <h4>Партійні ставки</h4>
+        <h5>Зелений колір вказує на високу ймовірність підтримки, <br/> червоний - на уникання співпраці</h5>
+        <div class="heatmap"></div>
+        <!--<img class="picture" src="img/graph-01.jpg">-->
 
         <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Докладніше про методологію
         </button>
@@ -198,7 +257,161 @@
 
 <script type="text/javascript" src="data/ukraine_qgis_new.js"></script>
 <script type="text/javascript" src="js/leaflet_map.js"></script>
-<script type="text/javascript" src="js/d3.heatmap.js"></script>
+
+<script>
+
+    window.addEventListener('resize', function() {
+       console.log("hello")
+    });
+
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByClassName('div.heatmap'),
+        x = w.innerWidth || e.clientWidth || g.clientWidth;
+
+
+    var width = x;
+
+
+//    var itemSize;
+    if (x < 400)  {
+
+        var itemSize = x / 20;
+        var height = 350;
+    } else if (x > 400 && x < 700)  {
+        var itemSize = x / 35;
+        var height = 300;
+    } else if (x > 700 && x < 1000)  {
+        var itemSize = x / 40;
+        var height = 350;
+    }
+
+
+    else {
+        var itemSize = x / 50;
+        var height = 400;
+    }
+
+
+
+     var cellSize = itemSize - 1,
+         margin = {top: 90, right: 0, bottom: 20, left: x / 5};
+
+    d3.csv('data/heatmap_d3.csv', function ( response ) {
+
+        var data = response.map(function( item ) {
+            var newItem = {};
+            newItem.country = item.x;
+            newItem.product = item.y;
+            newItem.full_y = item.full_y;
+            newItem.full_x = item.full_x;
+            newItem.value = item.value;
+
+            return newItem;
+        });
+
+        var x_elements = d3.set(data.map(function( item ) { return item.product; } )).values(),
+            y_elements = d3.set(data.map(function( item ) { return item.country; } )).values();
+
+        var xScale = d3.scale.ordinal()
+            .domain(x_elements)
+            .rangeBands([0, x_elements.length * itemSize]);
+
+        var xAxis = d3.svg.axis()
+            .scale(xScale)
+            .tickFormat(function (d) {
+                return d;
+            })
+            .orient("top");
+
+        var yScale = d3.scale.ordinal()
+            .domain(y_elements)
+            .rangeBands([0, y_elements.length * itemSize]);
+
+        var yAxis = d3.svg.axis()
+            .scale(yScale)
+            .tickFormat(function (d) {
+                return d;
+            })
+            .orient("left");
+
+        var colors = ['#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850'];
+
+        var colorScale = d3.scale.quantile()
+            .domain([-5, 0, 5])
+            .range(colors);
+
+        var svg = d3.select('div.heatmap')
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .attr("overflow", "visible")
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//        svg.append('text')
+//            .attr("x", -100)
+//            .attr("y", -130)
+//            .html("Партійні ставки")
+//            .attr('font-weight', 'bold')
+//            .attr("font-family", "PT Sans")
+//            .attr("font-size", "2.5em");
+////
+//        svg.append('text')
+//            .attr("x", -100)
+//            .attr("y", -100)
+//            .html("Зелений колір вказує на високу ймовірність підтримки, " + "<br/>" + "червоний - на уникання співпраці")
+//            .attr("font-family", "PT Sans")
+//            .attr("font-size", "1.8em");
+//
+
+        var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) {
+                return  "<div><span style='color:white'>" + d.full_x + " і " + d.full_y + "</span></div>" +
+                    "<div><span style='color:white'>" + d3.round(d.value, 3) + "</span></div>";
+            });
+
+        svg.call(tip);
+
+        var cells = svg.selectAll('rect')
+            .data(data)
+            .enter().append('g').append('rect')
+            .attr('class', 'cell')
+            .attr('width', itemSize)
+            .attr('height', itemSize)
+            .attr('y', function(d) { return yScale(d.country); })
+            .attr('x', function(d) { return xScale(d.product); })
+            .attr('fill', function(d) { return colorScale(d.value); })
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis)
+            .selectAll('text')
+            .attr('font-weight', 'normal');
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .call(xAxis)
+            .selectAll('text')
+            .attr('font-weight', 'normal')
+            .style("text-anchor", "start")
+            .attr("dx", ".8em")
+            .attr("dy", ".5em")
+            .attr("transform", function (d) {
+                return "rotate(-65)";
+            });
+
+
+
+         });
+
+
+</script>
 
 <!--footer-->
 <footer id="footer" class="container-fluid">

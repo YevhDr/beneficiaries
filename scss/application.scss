@@ -26,6 +26,7 @@
 }
 
 .info h4 {
+  font-size: 1.5em;
   margin: 0 0 5px;
   color: #777;
 }
@@ -484,8 +485,40 @@ p.description_content {
   border-color: #ffffff !important;
 }
 
-h4 {
-  color:white;
+
+
+
+///////////////////////////////////
+//HEATMAP
+///////////////////////////////////
+
+svg {
+  overflow: visible !important;
+  }
+.axis text {
+
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  fill: #8e8f91;
+  overflow: visible;
+
+  @media (min-width: 0px) and (max-width:480px) {
+    font-size: 9px;
+  }
+
 }
 
-/*# sourceMappingURL=application.css.map */
+h4 {
+  margin-top: 30px;
+  color: #5dc32c !important;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h5 {
+  margin-top: 10px;
+  color: #8e8f91 !important;
+  font-size: 1.7em;
+  font-weight: normal;
+  line-height: 1.3em;
+}
