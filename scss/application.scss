@@ -125,7 +125,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+    font-size: 2.5em;
   line-height: 1.2em;
   font-weight: bold;
   @media (max-width: 480px) {
@@ -133,6 +133,8 @@ h2 {
     width: 60%;
   }
 }
+
+
 
 h3 {
   font-size: 1.8em;
@@ -233,11 +235,13 @@ p {
 
 h2 {
   color: #faa61a;
-
+  line-height: 1.5em;
+  padding: 5px;
 }
 
+
 h2 span {
-  background: rgba(204, 196, 54, 0.9);
+  background-color: #3f4042;
   padding: 7px;
   color: #fff;
 }
@@ -246,7 +250,7 @@ h2.subtitle {
   padding-left: 20%;
   color: #383e47;
   margin-top: -10px;
-  width: 90%;
+  width: 100%;
 }
 
 h3 {

@@ -1,24 +1,24 @@
-var margin = {top: 10, right: 50, bottom: 20, left: 100};
+var margin1 = {top: 10, right: 50, bottom: 20, left: 100};
 
 var widther = window.outerWidth;
 
-var width = widther - margin.left - margin.right,
-    height = 250 - margin.top - margin.bottom;
+var width1 = widther - margin1.left - margin1.right,
+    height1 = 250 - margin1.top - margin1.bottom;
 
 //Appends the svg to the chart-container div
 var svg = d3.select(".g-chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width1 + margin1.left + margin1.right)
+    .attr("height", height1 + margin1.top + margin1.bottom)
     .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin1.left + "," + margin1.top + ")");
 
 //Creates the xScale
 var xScale = d3.scale.linear()
-    .range([0,width]);
+    .range([0,width1]);
 
 //Creates the yScale
 var y0 = d3.scale.ordinal()
-    .rangeBands([height, 0], 0.2)
+    .rangeBands([height1, 0], 0.2)
     .domain(["М.Фрідман", "Р.Ахметов", "А.Веревський", "О.Бахматюк", "С.Тігіпко", "NCH Capital", "В.Іванчик", "Ю.Косюк", "П.Порошенко", "К.Іаковідес"]);
 
 //Defines the y axis styles
@@ -31,8 +31,8 @@ var xAxis = d3.svg.axis()
     .scale(xScale)
     .orient("bottom")
     .tickFormat(function(d) {return d + "%"; })
-    .tickSize(height)
-    .ticks(numTicks(width));
+    .tickSize(height1)
+    .ticks(numTicks(width1));
 
 //Loads the data
 var file = "data/top10_businessman.csv";
