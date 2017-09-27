@@ -4,6 +4,11 @@
 @import "components/header";
 @import "components/footer";
 
+
+.container-fluid {
+  margin-left: 5% !important;
+}
+
 #map {
   position: relative;
   max-width: 800px;
@@ -125,7 +130,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em;
+   font-size: 2.1em;
   line-height: 1.2em;
   font-weight: bold;
   @media (max-width: 480px) {
@@ -241,9 +246,9 @@ h2 {
 
 
 h2 span {
-  background-color: #3f4042;
-  padding: 7px;
-  color: #fff;
+  background-color: #59595c;
+  padding: 5px;
+  color: #ffffff;
 }
 
 h2.subtitle {
