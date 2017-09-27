@@ -16,13 +16,19 @@ var width = x;
 if (x < 400)  {
     var itemSize = x / 20;
     var height = 300;
-} else if (x > 400 && x < 700)  {
-    var itemSize = x / 25;
+} else if (x > 400 && x < 600)  {
+    var itemSize = x / 30;
+    var height = 300;
+}else if (x > 600 && x < 700)  {
+    var itemSize = x / 30;
     var height = 350;
 } else if (x > 700 && x < 1000)  {
     var itemSize = x / 40;
+    var height = 320
+} else if (x > 1000 && x < 1200)  {
+    var itemSize = x / 50;
     var height = 350
-} else {
+}else {
     var itemSize = x / 50;
     var height = 400;
 }
