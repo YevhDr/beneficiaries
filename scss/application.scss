@@ -158,7 +158,7 @@ p {
   font-size: 1.5em;
   line-height: 1.9em;
 
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     margin-left: 5%;
   }
 }
@@ -248,7 +248,7 @@ h2 {
   line-height: 1.5em;
   padding: 5px;
 
-  @media (max-width: 480px) {
+  @media (max-width:700px) {
     margin-left: 5%;
   }
 }
@@ -502,11 +502,11 @@ p.description_content {
 
 .btn {
   margin-top: 20px;
-  background-color: #8e8f91;
+  background-color: #fee08b;
   color: #ffffff;
   margin-bottom: 40px;
   border-color: #ffffff !important;
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     margin-left: 5%!important;
   }
   a:hover {
@@ -576,7 +576,7 @@ h6 {
 .source {
   margin-top: -10px !important;
   border-bottom: 20px !important;
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     margin-left: 5% !important;
   }
 }

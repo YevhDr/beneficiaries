@@ -237,7 +237,7 @@ h3 {
 p {
   font-size: 1.5em;
   line-height: 1.9em; }
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     p {
       margin-left: 5%; } }
 
@@ -300,7 +300,7 @@ h2 {
   color: #faa61a;
   line-height: 1.5em;
   padding: 5px; }
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     h2 {
       margin-left: 5%; } }
 
@@ -496,11 +496,11 @@ p.description_content {
 
 .btn {
   margin-top: 20px;
-  background-color: #8e8f91;
+  background-color: #fee08b;
   color: #ffffff;
   margin-bottom: 40px;
   border-color: #ffffff !important; }
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     .btn {
       margin-left: 5% !important; } }
   .btn a:hover {
@@ -547,7 +547,7 @@ h6 {
 .source {
   margin-top: -10px !important;
   border-bottom: 20px !important; }
-  @media (max-width: 480px) {
+  @media (max-width: 700px) {
     .source {
       margin-left: 5% !important; } }
 
