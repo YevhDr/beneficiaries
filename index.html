@@ -72,7 +72,7 @@
 
     rect {
         stroke: #E6E6E6;
-        stroke-width: 1.5px;
+        stroke-width: 0.5px;
     }
 
     .axis path,
@@ -97,7 +97,7 @@
         font-size: 10px;
         width: 100%;
         line-height: 1;
-        color: rgba(0, 0, 0, 0.8);
+        color: #8e8f91;
         content: "\25BC";
         position: absolute;
         text-align: center;
@@ -110,13 +110,13 @@
         left: 0;
     }
 
-    #chart {
-        width: 100%;
-        height: 100%;
-        min-width: 500px;
-        min-height: 500px;
-        position: absolute;
-    }
+    /*#chart {*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*min-width: 500px;*/
+        /*min-height: 500px;*/
+        /*position: absolute;*/
+    /*}*/
 
 </style>
 <body>
@@ -191,13 +191,13 @@
             13% депутатів, пов’язаних із ним, були обрані Аграрної Партії. При цьому в аграріїв лише 5% від загального
             числа мандатів. </p>
 
-        <h5>Партійні ставки</h5>
-        <h6>Зелений колір вказує на високу ймовірність підтримки, <br/> червоний - на уникання співпраці</h6>
+        <h5 class="h-hed"></h5>
+        <p class="h-intro"></p>
         <div class="heatmap"></div>
+        <div class="source"> <span class="h-source-bold"></span><span class="h-source-reg"></span></div>
         <!--<img class="picture" src="img/graph-01.jpg">-->
-        <p class="small"><i>Джерело: дані про бенефіціарів з реєстру юридичних та фізичних осіб, електронні декларації</i></p>
 
-        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Докладніше про методологію
+        <button type="button" class="btn" data-toggle="collapse" data-target="#demo">Докладніше про методологію
         </button>
         <div id="demo" class="collapse">
             <div class="small">Припустимо, що партія “За Кіпр! За Панаму!” провела до місцевих рад 5% від числа усіх
@@ -209,7 +209,7 @@
                 показник зв’язку і зображено кольором на графіку. Кольорам зліва направо відповідають такі проміжки
                 значень:
 
-                <img src="img/scale-03.jpg" style="width: 100%"/>
+                <!--<img src="img/scale-03.jpg" style="width: 100%"/>-->
                 Від’ємний показник зв’язку означає, що бізнесмен ймовірно уникає співпраці із партією, великий показник
                 - що навпаки підтримує її. Наближений до нуля - що пов’язані із компаніями бізнесмена люди, скоріше за
                 все, опинялися у партії випадково.
@@ -226,7 +226,12 @@
             американського агрохолдингу “NCH Capital” Джордж Рор і Моріс Табасінік та Крістакіс Іаковідес з Кіпру, на
             якого зареєстрований агрохолдинг “Мрія”. “Мрія” раніше належала родини підприємців Гутів з Тернопільської
             області, але ті не змогли повернути борги, і тепер холдинг контролюють кредитори.</p>
-        <img class="picture" src="img/graph-02.jpg">
+        <h5 class="g-hed"></h5>
+        <p class="g-intro"></p>
+        <div class="g-chart"></div>
+        <div class="g-source"><span class="g-source-bold"></span><span class="g-source-reg"></span></div>
+
+        <!--<img class="picture" src="img/graph-02.jpg">-->
         <p>Також варто звернути увагу на власника “Альфа-Банку” та “УкрСоцБанку” російського олігарха Михайла Фрідмана,
             який вирвався на перше місце завдяки розданим кредитам, які депутати брали в його банках.</p>
         <p>Сергій Тігіпко потрапив до нашого списку через страхові виплати депутатам.</p>
@@ -258,6 +263,7 @@
 
 <script type="text/javascript" src="data/ukraine_qgis_new.js"></script>
 <script type="text/javascript" src="js/leaflet_map.js"></script>
+<script type="text/javascript" src="js/barchart.js"></script>
 
 <script>
 
@@ -281,8 +287,8 @@
         var itemSize = x / 20;
         var height = 300;
     } else if (x > 400 && x < 700)  {
-        var itemSize = x / 35;
-        var height = 300;
+        var itemSize = x / 25;
+        var height = 350;
     } else if (x > 700 && x < 1000)  {
         var itemSize = x / 40;
         var height = 300;
@@ -298,6 +304,11 @@
 
      var cellSize = itemSize - 1,
          margin = {top: 90, right: 0, bottom: -20, left: 80};
+
+    d3.select(".h-hed").text("ПАРТІЙНІ СТАВКИ");
+
+    //Appends chart intro text
+    d3.select(".h-intro").text("Зелений колір вказує на високу ймовірність підтримки, червоний - на уникання співпраці");
 
     d3.csv('data/heatmap_d3.csv', function ( response ) {
 
@@ -351,22 +362,6 @@
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-//        svg.append('text')
-//            .attr("x", -100)
-//            .attr("y", -130)
-//            .html("Партійні ставки")
-//            .attr('font-weight', 'bold')
-//            .attr("font-family", "PT Sans")
-//            .attr("font-size", "2.5em");
-////
-//        svg.append('text')
-//            .attr("x", -100)
-//            .attr("y", -100)
-//            .html("Зелений колір вказує на високу ймовірність підтримки, " + "<br/>" + "червоний - на уникання співпраці")
-//            .attr("font-family", "PT Sans")
-//            .attr("font-size", "1.8em");
-//
-
         var tip = d3.tip()
             .attr('class', 'd3-tip')
             .offset([-10, 0])
@@ -407,12 +402,22 @@
                 return "rotate(-65)";
             });
 
+        d3.select(".h-source-bold")
+            .text("ДЖЕРЕЛО: ")
+            .attr("class", "g-source-bold");
 
+        d3.select(".h-source-reg")
+            .text("дані про бенефіціарів з реєстру юридичних та фізичних осіб, електронні декларації")
+            .attr("class", "g-source-reg");
 
          });
 
 
 </script>
+
+
+
+
 
 <!--footer-->
 <footer id="footer" class="container-fluid">
@@ -502,4 +507,6 @@
 
 
 </body>
+
+
 </html>
