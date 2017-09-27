@@ -15,7 +15,7 @@ var width = x;
 //    var itemSize;
 if (x < 400)  {
     var itemSize = x / 20;
-    var height = 300;
+    var height = 320;
 } else if (x > 400 && x < 600)  {
     var itemSize = x / 30;
     var height = 300;
@@ -41,7 +41,7 @@ var cellSize = itemSize - 1,
 d3.select(".h-hed").text("ПАРТІЙНІ СТАВКИ");
 
 //Appends chart intro text
-d3.select(".h-intro").text("Зелений колір вказує на високу ймовірність підтримки, червоний - на уникання співпраці");
+d3.select(".h-intro").html("Зелений колір вказує на високу ймовірність підтримки, червоний - на уникання співпраці");
 
 d3.csv('data/heatmap_d3.csv', function ( response ) {
 
@@ -84,12 +84,12 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
     var colors = ['#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850'];
 
     var colorScale = d3.scale.quantile()
-        .domain([-5, 0, 5])
+        .domain([-15, 0, 40])
         .range(colors);
 
     var svg = d3.select('div.heatmap')
         .append("svg")
-        .attr("width", width / 2 )
+        .attr("width", x / 2 )
         .attr("height", height)
         .attr("overflow", "visible")
         .append("g")

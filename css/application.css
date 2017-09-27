@@ -116,8 +116,8 @@ p, li {
 .support-site:visited {
   color: #FAA61A; }
 
-.container-fluid {
-  margin-left: 5% !important; }
+svg {
+  margin-left: 5%; }
 
 #map {
   position: relative;
@@ -237,10 +237,14 @@ h3 {
 p {
   font-size: 1.5em;
   line-height: 1.9em; }
+  @media (max-width: 480px) {
+    p {
+      margin-left: 5%; } }
 
-.container-fluid {
+.container {
   padding-right: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  max-width: 100%; }
 
 /* ======== HEADER ======== */
 .navbar {
@@ -296,6 +300,9 @@ h2 {
   color: #faa61a;
   line-height: 1.5em;
   padding: 5px; }
+  @media (max-width: 480px) {
+    h2 {
+      margin-left: 5%; } }
 
 h2 span {
   background-color: #59595c;
@@ -316,6 +323,10 @@ h3 span {
   /* fallback color */
   background: rgba(51, 37, 50, 0.7);
   padding: 5px; }
+
+@media (max-width: 480px) {
+  h5 {
+    margin-left: 5%; } }
 
 p.fact {
   margin-top: 3.5em; }
@@ -489,6 +500,9 @@ p.description_content {
   color: #ffffff;
   margin-bottom: 40px;
   border-color: #ffffff !important; }
+  @media (max-width: 480px) {
+    .btn {
+      margin-left: 5% !important; } }
   .btn a:hover {
     background-color: white; }
   .btn a:active {
@@ -533,6 +547,9 @@ h6 {
 .source {
   margin-top: -10px !important;
   border-bottom: 20px !important; }
+  @media (max-width: 480px) {
+    .source {
+      margin-left: 5% !important; } }
 
 .g-hed .h-hed {
   text-align: left;
@@ -584,11 +601,6 @@ h6 {
 
 .domain {
   display: none; }
-
-.y.axis text {
-  text-anchor: end !important;
-  font-size: 14px;
-  fill: #000000; }
 
 .y.axis line {
   display: none; }
