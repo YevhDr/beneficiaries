@@ -121,13 +121,6 @@
         left: 0;
     }
 
-    /*#chart {*/
-        /*width: 100%;*/
-        /*height: 100%;*/
-        /*min-width: 500px;*/
-        /*min-height: 500px;*/
-        /*position: absolute;*/
-    /*}*/
 
 </style>
 <body>
@@ -244,11 +237,11 @@
             області, але ті не змогли повернути борги, і тепер холдинг контролюють кредитори.</p>
         <h5 class="g-hed"></h5>
         <p class="g-intro"></p>
-        <!--<div class="g-chart"></div>-->
-        <!--<div class="g-source"><span class="g-source-bold"></span><span class="g-source-reg"></span></div>-->
+        <div class="chart" id="d3-bar-horizontal"></div>
+        <div class="g-source"><span class="g-source-bold"></span><span class="g-source-reg"></span></div>
 
         <!--<img class="picture" src="img/graph-02.jpg">-->
-            <p>Також варто звернути увагу на власника «Альфа-Банку» та «УкрСоцБанку» російського олігарха <b><span class ="more_info" data-title="Михайло Фрідман – російський олігарх, головний акціонер консорціуму «Альфа-Груп». Серед основних його українських активів: «Київстар», Альфа-Банк Україна, УкрСоцБанк, IDS Group (мінеральні води «Моршинська», «Миргородська» та «Трускавецька»)" style="width:10em;">Михайла Фрідмана</span></b>,
+            <p style="margin-top: 40px">Також варто звернути увагу на власника «Альфа-Банку» та «УкрСоцБанку» російського олігарха <b><span class ="more_info" data-title="Михайло Фрідман – російський олігарх, головний акціонер консорціуму «Альфа-Груп». Серед основних його українських активів: «Київстар», Альфа-Банк Україна, УкрСоцБанк, IDS Group (мінеральні води «Моршинська», «Миргородська» та «Трускавецька»)" style="width:10em;">Михайла Фрідмана</span></b>,
             який вирвався на перше місце завдяки розданим кредитам, які депутати брали в його банках.</p>
         <p>Сергій Тігіпко потрапив до нашого списку через страхові виплати депутатам.</p>
         <p>У кількісному вимірі більшість депутатів, пов’язаних із цими бізнесменами обралися від “Блоку Петра
@@ -287,21 +280,13 @@
 </div>
 
 <script>
-//    $("span[title]").click(function () {
-//        var $title = $(this).find(".title");
-//        if (!$title.length) {
-//            $(this).append('<span class="title">' + $(this).attr("title") + '</span>');
-//        } else {
-//            $title.remove();
-//        }
-//    });
 
 </script>
 
 <script type="text/javascript" src="data/ukraine_qgis_new.js"></script>
-<script type="text/javascript" src="js/leaflet_map.js"></script>
+<!--<script type="text/javascript" src="js/leaflet_map.js"></script>-->
 <script type="text/javascript" src="js/d3.heatmap.js"></script>
-<!--<script type="text/javascript" src="js/barchart.js"></script>-->
+<script type="text/javascript" src="js/barchart.js"></script>
 
 
 <!--footer-->

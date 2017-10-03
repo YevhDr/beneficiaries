@@ -579,10 +579,10 @@ h6 {
   margin: 0px 0px 10px 0px; }
 
 .g-num {
-  fill: #66bd63; }
+  fill: #fee08b; }
 
-.g-num:hover {
-  fill: #f46d43; }
+.g-chart {
+  width: 80% !important; }
 
 .g-labels {
   font-family: 'Proxima-Nova', sans-serif;

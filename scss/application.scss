@@ -622,12 +622,16 @@ h6 {
 }
 
 .g-num {
-  fill: #66bd63;
+  fill: #fee08b;
 }
 
-.g-num:hover {
-  fill: #f46d43;
+.g-chart {
+  width: 80% !important;
 }
+
+//.g-num:hover {
+//  fill: #f46d43;
+//}
 
 .g-labels {
   font-family: 'Proxima-Nova', sans-serif;
