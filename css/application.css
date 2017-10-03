@@ -632,7 +632,7 @@ p span[data-title]:hover:after {
   left: 0;
   top: 100%;
   z-index: 20px;
-  background: #e3e3e3;
+  background: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.8em;
   line-height: 1.4em;
