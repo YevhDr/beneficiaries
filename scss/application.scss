@@ -657,7 +657,6 @@ h6 {
   display: none;
 }
 
-
 .y.axis line {
   display: none;
 }
@@ -668,18 +667,19 @@ h6 {
   stroke-dasharray:none;
 }
 
-p[title] {
-  width: 10em;
-  position: relative;}
 
-p[title]:hover:after {
-  content: attr(title);
+.more_info {
+  border-bottom: 1px dotted;
+  position: relative;
+
+}
+
+.more_info .title {
   position: absolute;
-  left: 50%;
-  top: 0.5em;
-  width: 10em;
-  padding: 2em;
-  font-size: smaller; border: 1px solid;
-  background: yellow;
-  color: red;
+
+  top: 20px;
+  background: #faa61a;
+  padding: 4px;
+  left: 0;
+  white-space: nowrap;
 }
