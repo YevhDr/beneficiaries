@@ -116,7 +116,7 @@ h1 {
   width: 90%;
 
   @media (max-width: 480px) {
-    font-size: 4em;
+    font-size: 4em !important;
     padding-top: 10%;
   }
 
@@ -266,10 +266,7 @@ h2 span {
 }
 
 h2.subtitle {
-  padding-left: 20%;
-  color: #383e47;
-  margin-top: -10px;
-  width: 100%;
+  margin-left: 0!important;
 }
 
 h3 {
