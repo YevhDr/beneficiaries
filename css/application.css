@@ -141,6 +141,9 @@ svg {
   margin: 0 0 5px;
   color: #777; }
 
+h4 {
+  color: #faa61a; }
+
 .legend {
   text-align: left;
   line-height: 18px;
@@ -486,7 +489,11 @@ p.description_content {
 
 .collapse {
   margin-bottom: 20px;
-  font-style: italic; }
+  font-size: 1.3em; }
+
+.collapsing {
+  margin-bottom: 20px;
+  font-size: 1.3em; }
 
 .small {
   width: 90%;
