@@ -668,18 +668,26 @@ h6 {
 }
 
 
-.more_info {
-  border-bottom: 1px dotted;
+p span:hover {
+  color: #faa61a;
   position: relative;
-
 }
 
-.more_info .title {
+p span[data-title]:hover:after {
+  content: attr(data-title);
+  padding: 3px;
+  color: #000;
   position: absolute;
-
-  top: 20px;
-  background: #faa61a;
-  padding: 4px;
+  width: auto;
+  min-width: 200px;
+  max-width: 500px;
   left: 0;
-  white-space: nowrap;
+  top: 100%;
+  z-index: 20px;
+  background: #e3e3e3;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  font-weight: normal;
+  //border: 1px solid #ccc;
 }
