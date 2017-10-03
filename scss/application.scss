@@ -306,12 +306,10 @@ p.fact::first-letter {
 p span {
   background: rgba(227, 227, 227, 0.5);
   padding: 1px;
+  border-bottom: 1px dashed;
+
 }
 
-p span.itallic {
-  background: none;
-  font-style: italic;
-}
 
 p.map-text {
   position: absolute;
@@ -684,7 +682,7 @@ p span[data-title]:hover:after {
   left: 0;
   top: 100%;
   z-index: 20px;
-  background: #ffffff;
+  background: #f3f3f3;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 0.8em;
   line-height: 1.4em;
