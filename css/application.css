@@ -343,7 +343,7 @@ p.fact::first-letter {
   line-height: 1; }
 
 p span {
-  background: rgba(204, 196, 54, 0.5);
+  background: rgba(227, 227, 227, 0.5);
   padding: 1px; }
 
 p span.itallic {
@@ -616,5 +616,21 @@ h6 {
   stroke: #000;
   stroke-width: 1px;
   stroke-dasharray: none; }
+
+p[title] {
+  width: 10em;
+  position: relative; }
+
+p[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  left: 50%;
+  top: 0.5em;
+  width: 10em;
+  padding: 2em;
+  font-size: smaller;
+  border: 1px solid;
+  background: yellow;
+  color: red; }
 
 /*# sourceMappingURL=application.css.map */
