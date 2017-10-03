@@ -549,30 +549,10 @@ h6 {
   fill: #8c510a; }
 
 .source {
-  margin-top: -10px !important;
   border-bottom: 20px !important; }
   @media (max-width: 700px) {
     .source {
       margin-left: 5% !important; } }
-
-.g-hed .h-hed {
-  text-align: left;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 22px; }
-
-.g-source-bold .h-source-bold {
-  text-align: left;
-  font-size: 10px;
-  font-weight: bold;
-  margin-bottom: 30px; }
-
-.g-source .h-source {
-  margin: 30px; }
-
-.g-source-bold {
-  text-align: left;
-  font-size: 10px; }
 
 .g-intro .h-intro {
   font-size: 16px;
@@ -581,7 +561,10 @@ h6 {
 .g-num {
   fill: #fee08b; }
 
-.g-chart {
+#d3-bar-horizontal {
+  width: 90% !important; }
+
+.heatmap {
   width: 80% !important; }
 
 .g-labels {

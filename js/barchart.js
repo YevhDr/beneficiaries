@@ -21,7 +21,7 @@
 
 
     var d3Container = d3.select("#d3-bar-horizontal"),
-        margin_bar = {top: 20, right: 10, bottom: 5, left: 80},
+        margin_bar = {top: 20, right: 40, bottom: 5, left: 80},
         width_bar = d3Container.node().getBoundingClientRect().width - margin_bar.left - margin_bar.right,
         height_bar = 300 - margin_bar.top - margin_bar.bottom - 5,
         n = 12;
