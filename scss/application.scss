@@ -106,7 +106,9 @@ a:hover {
 }
 
 h1 {
+  margin-top: 40px;
   line-height: 2.3em;
+  //color: #faa61a;
   color: #faa61a;
   font-weight: bold;
 }
@@ -121,7 +123,7 @@ h1 {
   }
 
   @media (min-width: 1200px) {
-    font-size: 12em;
+    font-size: 12em !important;
     margin-top:20px;
     margin-bottom: 20px;
   }
@@ -248,6 +250,7 @@ p {
 
 
 h2 {
+  //color: #faa61a;
   color: #faa61a;
   line-height: 1.5em;
   padding: 5px;
@@ -267,6 +270,10 @@ h2 span {
 
 h2.subtitle {
   margin-left: 0!important;
+
+  @media (min-width: 1200px) {
+    font-size: 4em;
+  }
 }
 
 h3 {
@@ -506,7 +513,7 @@ p.description_content {
 
 .btn {
   margin-top: 20px;
-  background-color: #fee08b;
+  background-color: #2166ac;
   color: #ffffff;
   margin-bottom: 40px;
   border-color: #ffffff !important;
@@ -522,175 +529,174 @@ p.description_content {
   }
 }
 
-.btn.btn-info.collapsed {
-  border: 0 !important;
-  background-color: #8e8f91!important;
+button.btn {
+  text-align: center !important;
 }
 
-
-
-
-
-///////////////////////////////////
-//HEATMAP
-///////////////////////////////////
-
-svg {
-  overflow: visible !important;
+  .btn.btn-info.collapsed {
+    border: 0 !important;
+    background-color: #8e8f91!important;
   }
 
-.axis text {
 
-  font-size: 14px;
-  font-family: "PT Sans", sans-serif;
-  fill: #8e8f91;
-  overflow: visible;
 
-  @media (min-width: 0px) and (max-width:480px) {
-    font-size: 9px;
+
+
+  ///////////////////////////////////
+  //HEATMAP
+  ///////////////////////////////////
+
+  svg {
+    overflow: visible !important;
   }
 
-}
+  .axis text {
 
-h5 {
-  margin-top: 30px;
-  color: #5dc32c !important;
-  font-size: 2em;
-  font-weight: bold;
-}
+    font-size: 14px;
+    font-family: "PT Sans", sans-serif;
+    fill: #8e8f91;
+    overflow: visible;
 
-h6 {
-  margin-top: 10px;
-  color: #8e8f91 !important;
-  font-size: 1.7em;
-  font-weight: normal;
-  line-height: 1.3em;
-}
+    @media (min-width: 0px) and (max-width:480px) {
+      font-size: 9px;
+    }
 
-.bars {
-  fill: #35978f;
-}
-
-
-
-.bars:hover {
-  fill: #8c510a;
-}
-
-.source {
-  //margin-top: -10px !important;
-  border-bottom: 20px !important;
-  @media (max-width: 700px) {
-    margin-left: 5% !important;
   }
-}
 
-//.g-source-red {
-//  text-align: left;
-//  text-transform: uppercase;
-//  font-weight: bold;
-//  font-size:22px;
-//
-//}
-//
-//.g-source-bold  .h-source-bold{
-//  text-align: left;
-//  font-size:10px;
-//  font-weight: bold;
-//  margin-bottom: 30px;
-//
-//
-//}
-//
-//.g-source .h-source {
-//  margin: 30px;
-//
-//
-//}
-//
-//.g-source-bold {
-//  text-align: left;
-//  font-size:10px;
-//}
+  h5 {
+    font-family: 'Proxima-Nova', sans-serif;
+    margin-top: 55px;
+    //margin-left: 15%;
+    color: #2166ac !important;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+  }
 
-.g-intro .h-intro {
-  font-size: 16px;
-  margin: 0px 0px 10px 0px;
-}
+  h6 {
+    margin-top: 10px;
+    color: #8e8f91 !important;
+    font-size: 1.7em;
+    font-weight: normal;
+    line-height: 1.3em;
+  }
 
-.g-num {
-  fill: #fee08b;
-}
-
-#d3-bar-horizontal {
-  width: 90% !important;
-}
-
-.heatmap {
-  width: 80% !important;
-}
-
-//.g-num:hover {
-//  fill: #f46d43;
-//}
-
-.g-labels {
-  font-family: 'Proxima-Nova', sans-serif;
-  fill: #ffffff;
-  font-weight: bold;
-  font-size: 13px;
-}
-
-.axis line {
-  fill: none;
-  stroke: #ccc;
-  stroke-dasharray: 2px 3px;
-  shape-rendering: crispEdges;
-  stroke-width: 1px;
-}
-
-.axis text {
-  font-family: 'Proxima-Nova', sans-serif;
-  font-size: 13px;
-  pointer-events: none;
-  fill: #7e7e7e;
-}
-
-.domain {
-  display: none;
-}
-
-.y.axis line {
-  display: none;
-}
-
-.g-baseline line {
-  stroke:#000;
-  stroke-width: 1px;
-  stroke-dasharray:none;
-}
+  .bars {
+    fill: #35978f;
+  }
 
 
-p span:hover {
-  color: #faa61a;
-  position: relative;
-}
 
-p span[data-title]:hover:after {
-  content: attr(data-title);
-  padding: 3px;
-  color: #000;
-  position: absolute;
-  width: auto;
-  min-width: 200px;
-  max-width: 500px;
-  left: 0;
-  top: 100%;
-  z-index: 20px;
-  background: #f3f3f3;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 0.8em;
-  line-height: 1.4em;
-  font-weight: normal;
-  //border: 1px solid #ccc;
-}
+  .bars:hover {
+    fill: #8c510a;
+  }
+
+  .source {
+    border-bottom: 20px !important;
+    margin-left: 15%;
+  }
+
+
+  p.h-intro {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.2em;
+    font-family: 'Proxima-Nova', sans-serif;
+    color:#7e7e7e;
+  }
+
+  p.g-intro {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.2em;
+    font-family: 'Proxima-Nova', sans-serif;
+    color:#7e7e7e;
+  }
+
+  p.hint {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.1em;
+    font-family: 'Proxima-Nova', sans-serif;
+    color:#7e7e7e;
+  }
+
+  .g-num {
+    fill: #fee08b;
+  }
+
+  #d3-bar-horizontal {
+    width: 90% !important;
+  }
+
+  .heatmap {
+    width: 80% !important;
+  }
+
+  .g-labels {
+    font-family: 'Proxima-Nova', sans-serif;
+    fill: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .axis line {
+    fill: none;
+    stroke: #ccc;
+    stroke-dasharray: 2px 3px;
+    shape-rendering: crispEdges;
+    stroke-width: 1px;
+  }
+
+  .axis text {
+    font-family: 'Proxima-Nova', sans-serif;
+    font-size: 13px;
+    pointer-events: none;
+    fill: #7e7e7e;
+  }
+
+  .domain {
+    display: none;
+  }
+
+  .y.axis line {
+    display: none;
+  }
+
+  .g-baseline line {
+    stroke:#000;
+    stroke-width: 1px;
+    stroke-dasharray:none;
+  }
+
+
+  p span:hover {
+    color: #faa61a;
+    position: relative;
+  }
+
+  p span[data-title]:hover:after {
+    content: attr(data-title);
+    padding: 3px;
+    color: #000;
+    position: absolute;
+    width: auto;
+    min-width: 200px;
+    max-width: 500px;
+    left: 0;
+    top: 100%;
+    z-index: 20px;
+    background: #f3f3f3;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    font-weight: normal;
+    //border: 1px solid #ccc;
+  }
+
+  .tooltip {
+    margin-left: -30px;
+    font-size: 1.2em;
+  }
+

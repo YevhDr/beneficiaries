@@ -1,3 +1,10 @@
+//
+// var width = 800;
+// var aspectRatio = 4.0 / 3.0;
+// var height = width / aspectRatio;
+// var itemSize = width / 20;
+
+
 window.addEventListener('resize', function() {
     console.log("hello")
 });
@@ -17,31 +24,31 @@ if (x < 400)  {
     var itemSize = x / 20;
     var height = 320;
 } else if (x > 400 && x < 600)  {
-    var itemSize = x / 30;
-    var height = 300;
+    var itemSize = x / 20;
+    var height = 350;
 }else if (x > 600 && x < 700)  {
-    var itemSize = x / 30;
+    var itemSize = x / 20;
     var height = 350;
 } else if (x > 700 && x < 1000)  {
-    var itemSize = x / 40;
-    var height = 320
+    var itemSize = x / 30;
+    var height = 400
 } else if (x > 1000 && x < 1200)  {
-    var itemSize = x / 50;
-    var height = 350
+    var itemSize = x / 30;
+    var height = 400
 }else {
-    var itemSize = x / 50;
-    var height = 400;
+    var itemSize = x / 40;
+    var height = 450;
 }
 
 
 
 var cellSize = itemSize - 1,
-    margin = {top: 100, right: 0, bottom: -20, left: 80};
+    margin = {top: 100, right: 0, bottom: -20, left: 100};
 
-d3.select(".h-hed").text("ПАРТІЙНІ СТАВКИ");
+d3.select(".h-hed").text("Партійні ставки");
 
 //Appends chart intro text
-d3.select(".h-intro").html("Зелений колір вказує на високу ймовірність підтримки, червоний - на уникання співпраці");
+d3.select(".h-intro").html("Синій колір вказує на високу ймовірність підтримки, червоний - на уникання співпраці");
 
 d3.csv('data/heatmap_d3.csv', function ( response ) {
 
@@ -81,7 +88,7 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         })
         .orient("left");
 
-    var colors = ['#d73027', '#f46d43', '#fdae61', '#fee08b', '#ffffbf', '#d9ef8b', '#a6d96a', '#66bd63', '#1a9850'];
+    var colors = ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#f7f7f7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'];
 
     var colorScale = d3.scale.quantile()
         .domain([-15, 0, 40])
@@ -91,6 +98,7 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         .append("svg")
         .attr("width", x / 2 )
         .attr("height", height)
+        .attr("content-align", "center")
         .attr("overflow", "visible")
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -144,3 +152,4 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         .attr("class", "g-source-reg");
 
 });
+

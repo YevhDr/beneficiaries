@@ -1,9 +1,13 @@
 
     //Appends chart headline
-    d3.select(".g-hed").text("ЛИШЕ БІЗНЕС ЧИ Й ПОЛІТИКА");
+    d3.select(".g-hed").text("Лише бізнес чи й політика");
 
     //Appends chart intro text
-    d3.select(".g-intro").text("Бізнесмени, з чиїми компаніями повʼязано найбільше місцевих депутатів");
+    d3.select(".g-intro").html("Бізнесмени, з чиїми компаніями повʼязано найбільше місцевих депутатів");
+
+    d3.select(".hint").html("<i>Наведіть мишею на стовбчик, аби дізнатись про бізнес-інтереси олігарха</i>");
+
+
 
 
     //Appends chart source
@@ -21,7 +25,7 @@
 
 
     var d3Container = d3.select("#d3-bar-horizontal"),
-        margin_bar = {top: 20, right: 40, bottom: 5, left: 80},
+        margin_bar = {top: 20, right: 40, bottom: 5, left: 30},
         width_bar = d3Container.node().getBoundingClientRect().width - margin_bar.left - margin_bar.right,
         height_bar = 300 - margin_bar.top - margin_bar.bottom - 5,
         n = 12;
@@ -130,14 +134,32 @@
             .enter()
             .append("g")
             .attr("class", "d3-bar-group")
-            .attr("fill", "#fee08b")
+            .attr("fill", "#4393c3")
             .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
+
+        var div = d3.select("div.ol-info").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
 
         // Add bar
         bar.append("rect")
             .attr("class", "d3-bar")
             .attr("width", function(d) { return x(d.value); })
-            .attr("height", y.rangeBand());
+            .attr("height", y.rangeBand())
+            .on("mouseover", function(d) {
+                div.transition()
+                    .duration(50)
+                    .style("opacity", .9);
+                div.html(d.info)
+                    // .style("left", (d3.event.pageX) + "px")
+                    .style("top", "30px");
+            })
+            .on("mouseout", function(d) {
+                div.transition()
+                    .duration(50)
+                    .style("opacity", 0);
+            })
+        ;
 
         // Add text label
         bar.append("text")
