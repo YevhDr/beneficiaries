@@ -308,9 +308,9 @@ p.fact::first-letter {
 }
 
 p span {
-  background: rgba(227, 227, 227, 0.5);
+
   padding: 1px;
-  border-bottom: 1px dashed;
+
 
 }
 
@@ -631,7 +631,12 @@ button.btn {
   }
 
   .heatmap {
-    width: 80% !important;
+    width: 84% !important;
+    margin-bottom: 60px;
+
+    @media (max-width: 800px) {
+      margin-bottom: 40px;
+    }
   }
 
   .g-labels {
@@ -699,4 +704,9 @@ button.btn {
     margin-left: -30px;
     font-size: 1.2em;
   }
+
+
+.heatmap path, .heatmap line, .heatmap text {
+  vector-effect: non-scaling-stroke;
+}
 

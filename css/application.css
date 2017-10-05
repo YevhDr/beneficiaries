@@ -344,9 +344,7 @@ p.fact::first-letter {
   line-height: 1; }
 
 p span {
-  background: rgba(227, 227, 227, 0.5);
-  padding: 1px;
-  border-bottom: 1px dashed; }
+  padding: 1px; }
 
 p.map-text {
   position: absolute;
@@ -587,7 +585,11 @@ p.hint {
   width: 90% !important; }
 
 .heatmap {
-  width: 80% !important; }
+  width: 84% !important;
+  margin-bottom: 60px; }
+  @media (max-width: 800px) {
+    .heatmap {
+      margin-bottom: 40px; } }
 
 .g-labels {
   font-family: 'Proxima-Nova', sans-serif;
@@ -643,5 +645,8 @@ p span[data-title]:hover:after {
 .tooltip {
   margin-left: -30px;
   font-size: 1.2em; }
+
+.heatmap path, .heatmap line, .heatmap text {
+  vector-effect: non-scaling-stroke; }
 
 /*# sourceMappingURL=application.css.map */

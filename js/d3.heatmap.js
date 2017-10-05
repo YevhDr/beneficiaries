@@ -1,54 +1,25 @@
-//
-// var width = 800;
-// var aspectRatio = 4.0 / 3.0;
-// var height = width / aspectRatio;
-// var itemSize = width / 20;
-
-
 window.addEventListener('resize', function() {
-    console.log("hello")
+    console.log("resized")
 });
 
-var w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByClassName('div.heatmap'),
-    x = w.innerWidth || e.clientWidth || g.clientWidth;
+// var w = window,
+//     d = document,
+//     e = d.documentElement,
+//     g = d.getElementsByClassName('div.heatmap'),
+//     x = w.innerWidth || e.clientWidth || g.clientWidth;
 
-
-var width = x;
-
-
-//    var itemSize;
-if (x < 400)  {
-    var itemSize = x / 20;
-    var height = 320;
-} else if (x > 400 && x < 600)  {
-    var itemSize = x / 20;
-    var height = 350;
-}else if (x > 600 && x < 700)  {
-    var itemSize = x / 20;
-    var height = 350;
-} else if (x > 700 && x < 1000)  {
-    var itemSize = x / 30;
-    var height = 400
-} else if (x > 1000 && x < 1200)  {
-    var itemSize = x / 30;
-    var height = 400
-}else {
-    var itemSize = x / 40;
-    var height = 450;
-}
+var width = 700;
+var aspectRatio = 4.0 / 3.0;
+var height = width / aspectRatio / 1.5;
 
 
 
-var cellSize = itemSize - 1,
-    margin = {top: 100, right: 0, bottom: -20, left: 100};
+margin = {top: 50, right: 0, bottom: 100, left: 100};
 
 d3.select(".h-hed").text("Партійні ставки");
 
 //Appends chart intro text
-d3.select(".h-intro").html("Синій колір вказує на високу ймовірність підтримки, червоний - на уникання співпраці");
+d3.select(".h-intro").html('<span style="color: #2166ac"><b>Синій</b></span> колір вказує на високу ймовірність підтримки, <span style="color: #b2182b"><b>червоний</b></span> - на уникання співпраці');
 
 d3.csv('data/heatmap_d3.csv', function ( response ) {
 
@@ -68,7 +39,7 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
 
     var xScale = d3.scale.ordinal()
         .domain(x_elements)
-        .rangeBands([0, x_elements.length * itemSize]);
+        .rangeBands([0, width]);
 
     var xAxis = d3.svg.axis()
         .scale(xScale)
@@ -79,7 +50,7 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
 
     var yScale = d3.scale.ordinal()
         .domain(y_elements)
-        .rangeBands([0, y_elements.length * itemSize]);
+        .rangeBands([0, height]);
 
     var yAxis = d3.svg.axis()
         .scale(yScale)
@@ -96,8 +67,9 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
 
     var svg = d3.select('div.heatmap')
         .append("svg")
-        .attr("width", x / 2 )
-        .attr("height", height)
+        .attr('viewBox', '0 0 ' + width + ' ' + height)
+        // .attr("width", x / 2 )
+        // .attr("height", height)
         .attr("content-align", "center")
         .attr("overflow", "visible")
         .append("g")
@@ -117,8 +89,8 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         .data(data)
         .enter().append('g').append('rect')
         .attr('class', 'cell')
-        .attr('width', itemSize)
-        .attr('height', itemSize)
+        .attr('width', width/10)
+        .attr('height', height / 10)
         .attr('y', function(d) { return yScale(d.country); })
         .attr('x', function(d) { return xScale(d.product); })
         .attr('fill', function(d) { return colorScale(d.value); })
@@ -136,12 +108,13 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         .call(xAxis)
         .selectAll('text')
         .attr('font-weight', 'normal')
-        .style("text-anchor", "start")
-        .attr("dx", ".8em")
-        .attr("dy", ".5em")
-        .attr("transform", function (d) {
-            return "rotate(-65)";
-        });
+        .style("text-anchor", "center")
+        .attr("dx", "0em")
+        .attr("dy", "-0.5em");
+    //     .attr("transform", function (d) {
+    //         return "rotate(-65)";
+    //     })
+    // ;
 
     d3.select(".h-source-bold")
         .text("ДЖЕРЕЛО: ")
