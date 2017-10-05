@@ -77,13 +77,18 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
 
     var tip = d3.tip()
         .attr('class', 'd3-tip')
-        .offset([-10, 0])
+        .offset([0, 0])
         .html(function(d) {
             return  "<div><span style='color:white'>" + d.full_x + " і " + d.full_y + "</span></div>" +
                 "<div><span style='color:white'>" + d3.round(d.value, 3) + "</span></div>";
-        });
+        }) ;
+
 
     svg.call(tip);
+
+    var tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
 
     var cells = svg.selectAll('rect')
         .data(data)
@@ -94,8 +99,19 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         .attr('y', function(d) { return yScale(d.country); })
         .attr('x', function(d) { return xScale(d.product); })
         .attr('fill', function(d) { return colorScale(d.value); })
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide);
+        .on("mouseover", function(d) {
+            tooltip.transition().duration(200).style("opacity", .9);
+            tooltip.html(d.full_x + " і " + d.full_y + "<br>" + "рівень підтримки: " + d3.round(d.value, 3))
+                .style("left", (d3.event.pageX + 10) + "px")
+                .style("top", (d3.event.pageY + 10) + "px");
+        })
+        .on("mouseout", function(d) {
+            tooltip.transition().duration(500).style("opacity", 0);
+        });
+
+
+        // .on('mouseover', tip.show)
+        // .on('mouseout', tip.hide);
 
     svg.append("g")
         .attr("class", "y axis")
