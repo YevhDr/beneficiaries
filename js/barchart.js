@@ -155,7 +155,7 @@
         bar.append("text")
             .attr("x", function(d) { return x(d.value); })
             .attr("y", y.rangeBand() / 2)
-            .attr("dx", -10)
+            .attr("dx", "-0.2em")
             .attr("dy", ".35em")
             .style("text-anchor", "end")
             .style("fill", "#fff")
