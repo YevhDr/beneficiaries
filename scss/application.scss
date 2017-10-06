@@ -567,9 +567,9 @@ button.btn {
     font-family: 'Proxima-Nova', sans-serif;
     margin-top: 55px;
     //margin-left: 15%;
-    color: #2166ac !important;
+    color: #8e8f91 !important;
     font-size: 2em;
-    font-weight: bold;
+    //font-weight: bold;
     text-align: center;
   }
 
@@ -598,6 +598,7 @@ button.btn {
 
 
   p.h-intro {
+    margin-left: 10%;
     text-align: center;
     font-size: 15px;
     line-height: 1.2em;
@@ -606,6 +607,7 @@ button.btn {
   }
 
   p.g-intro {
+    margin-left: 5%;
     text-align: center;
     font-size: 15px;
     line-height: 1.2em;
@@ -614,7 +616,9 @@ button.btn {
   }
 
   p.hint {
-    margin-top: 20px;
+    font-style: italic;
+    margin-bottom: -15px;
+    margin-top: 30px;
     text-align: center;
     font-size: 12px;
     line-height: 1.1em;
@@ -702,7 +706,10 @@ button.btn {
 
   .tooltip {
     margin-left: -30px;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    bottom: 0;
+    right: 0;
+    position:absolute;
   }
 
 
@@ -710,7 +717,7 @@ button.btn {
   vector-effect: non-scaling-stroke;
 }
 
-div.tooltip {
+div.tooltips {
   color:white;
   position: absolute;
   text-align: center;
@@ -724,3 +731,7 @@ div.tooltip {
   pointer-events: none;
 }
 
+//
+//#myshape {
+//  width: 80%!important;
+//}

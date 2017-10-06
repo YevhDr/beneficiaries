@@ -5,11 +5,6 @@
     //Appends chart intro text
     d3.select(".g-intro").html("Бізнесмени, з чиїми компаніями повʼязано найбільше місцевих депутатів");
 
-    d3.select(".hint").html("<i>Наведіть мишею на стовбчик, аби дізнатись про бізнес-інтереси олігарха</i>");
-
-
-
-
     //Appends chart source
     d3.select(".g-source-bold")
         .text("ДЖЕРЕЛО: ")
@@ -21,11 +16,8 @@
 
 
 
-
-
-
     var d3Container = d3.select("#d3-bar-horizontal"),
-        margin_bar = {top: 20, right: 40, bottom: 5, left: 30},
+        margin_bar = {top: 20, right: 40, bottom: 5, left: 60},
         width_bar = d3Container.node().getBoundingClientRect().width - margin_bar.left - margin_bar.right,
         height_bar = 300 - margin_bar.top - margin_bar.bottom - 5,
         n = 12;
@@ -102,14 +94,6 @@
         // Verticals
         y.domain(data.map(function(d) { return d.name; }));
 
-
-        //
-        // Append chart elements
-        //
-
-        // Append axes
-        // ------------------------------
-
         // Horizontal
         svg.append("g")
             .attr("class", "x axis")
@@ -140,6 +124,11 @@
         var div = d3.select("div.ol-info").append("div")
             .attr("class", "tooltip")
             .style("opacity", 0);
+
+        // var div = d3.select("svg")
+        //     .append("div")
+        //     .attr("class", "tooltip")
+        //     .style("opacity", 0);
 
         // Add bar
         bar.append("rect")
@@ -174,21 +163,12 @@
     });
 
 
-
-    // Resize chart
-    // ------------------------------
-
-    // Call function on window resize
     $(window).on('resize', resize);
 
-    // Call function on sidebar width change
+
     $('.sidebar-control').on('click', resize);
 
-    // Resize function
-    //
-    // Since D3 doesn't support SVG resize by default,
-    // we need to manually specify parts of the graph that need to
-    // be updated on window resize
+
     function resize() {
 
         // Layout variables

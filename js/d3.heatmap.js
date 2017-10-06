@@ -87,7 +87,7 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
     svg.call(tip);
 
     var tooltip = d3.select("body").append("div")
-        .attr("class", "tooltip")
+        .attr("class", "tooltips")
         .style("opacity", 0);
 
     var cells = svg.selectAll('rect')
