@@ -102,7 +102,8 @@
 
         // Vertical
         svg.append("g")
-            .attr("class", "y axis")
+            .attr("class", "bar-axis")
+            .attr("fill", "#7e7e7e")
             .call(yAxis);
 
         // Remove lines

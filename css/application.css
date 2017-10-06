@@ -522,14 +522,32 @@ button.btn {
 svg {
   overflow: visible !important; }
 
-.axis text {
-  font-size: 14px;
+.x.axis text {
   font-family: "PT Sans", sans-serif;
   fill: #8e8f91;
   overflow: visible; }
-  @media (min-width: 0px) and (max-width: 480px) {
-    .axis text {
-      font-size: 9px; } }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .x.axis text {
+      text-anchor: start !important;
+      font-size: 2em !important;
+      margin-top: 100px;
+      -ms-transform: rotate(65deg);
+      /* IE 9 */
+      -webkit-transform: rotate(65deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(-65deg); } }
+
+@media (min-width: 0px) and (max-width: 500px) {
+  .y.axis text {
+    font-size: 1.9em !important; } }
+
+.heatmap {
+  width: 80% !important; }
+  @media (min-width: 0px) and (max-width: 500px) {
+    .heatmap {
+      width: 75% !important;
+      margin-top: 30px;
+      margin-left: 25px !important; } }
 
 h5 {
   font-family: 'Proxima-Nova', sans-serif;
@@ -588,7 +606,6 @@ p.hint {
   width: 90% !important; }
 
 .heatmap {
-  width: 84% !important;
   margin-bottom: 60px; }
   @media (max-width: 800px) {
     .heatmap {
@@ -652,9 +669,6 @@ p span[data-title]:hover:after {
   right: 0;
   position: absolute; }
 
-.heatmap path, .heatmap line, .heatmap text {
-  vector-effect: non-scaling-stroke; }
-
 div.tooltips {
   color: white;
   position: absolute;
@@ -670,5 +684,8 @@ div.tooltips {
 
 #myshape {
   position: relative; }
+
+.bar-axis {
+  font-size: 1.2em !important; }
 
 /*# sourceMappingURL=application.css.map */

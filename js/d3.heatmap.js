@@ -8,7 +8,7 @@ window.addEventListener('resize', function() {
 //     g = d.getElementsByClassName('div.heatmap'),
 //     x = w.innerWidth || e.clientWidth || g.clientWidth;
 
-var width = 800;
+var width = 700;
 var aspectRatio = 4.0 / 3.0;
 var height = width / aspectRatio / 1.5;
 
@@ -68,7 +68,8 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
     var svg = d3.select('div.heatmap')
         .append("svg")
         .attr('viewBox', '0 0 ' + width + ' ' + height)
-        // .attr("width", x / 2 )
+
+        // .attr("width", width )
         // .attr("height", height)
         .attr("content-align", "center")
         .attr("overflow", "visible")
@@ -118,6 +119,8 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         .call(yAxis)
         .selectAll('text')
         .attr('font-weight', 'normal');
+
+
 
     svg.append("g")
         .attr("class", "x axis")
