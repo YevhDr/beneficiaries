@@ -8,7 +8,7 @@ window.addEventListener('resize', function() {
 //     g = d.getElementsByClassName('div.heatmap'),
 //     x = w.innerWidth || e.clientWidth || g.clientWidth;
 
-var width = 700;
+var width = 800;
 var aspectRatio = 4.0 / 3.0;
 var height = width / aspectRatio / 1.5;
 

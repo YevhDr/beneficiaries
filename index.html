@@ -62,24 +62,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="lib/d3.tip.v0.6.3.js"></script>
     <script src="lib/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="lib/ddpowerzoomer.js"></script>
+    <!--<script type="text/javascript" src="lib/ddpowerzoomer.js"></script>-->
 
 
-    <script type="text/javascript">
+    <!--<script type="text/javascript">-->
 
-        jQuery(document).ready(function ($) { //fire on DOM ready
+        <!--jQuery(document).ready(function ($) { //fire on DOM ready-->
 
 
-            $('#thumb').addpowerzoom({
-                defaultpower: 2,
-                powerrange: [2, 3],
-                largeimage: null,
-                magnifiersize: [150, 150]
-            })
+            <!--$('#thumb').addpowerzoom({-->
+                <!--defaultpower: 2,-->
+                <!--powerrange: [2, 3],-->
+                <!--largeimage: null,-->
+                <!--magnifiersize: [150, 150]-->
+            <!--})-->
 
-        })
+        <!--})-->
 
-    </script>
+    <!--</script>-->
 
 
 </head>
@@ -87,67 +87,12 @@
 
 <style>
 
-    .wrapper {
-        width: 800px;
-        margin: 0 auto
-    }
-
-    .heading {
-        color: #4183C4
-    }
-
-    .note {
-        font-size: 13px;
-        line-height: 27px
-    }
-
-    .code {
-        background-color: #4183C4;
-        color: #fff;
-        padding: 0 5px;
-        border-radius: 2px
-    }
-
-    .magnifier-preview.example {
-        border: solid 1px #555;
-        text-align: center;
-        line-height: 30px
-    }
-
-    .magnifier-info {
-        float: left;
-        border: solid 1px #ccc;
-        width: 200px;
-        height: 133px;
-        clear: left;
-        margin-top: -4px
-    }
-
-    .magnifier-thumb-wrapper.demo {
-        float: left;
-        padding: 0;
-        margin: 0;
-        top: 1px
-    }
-
-    #preview1 {
-        width: 400px;
-        height: 267px
-    }
-
-    #preview2 {
-        width: 400px;
-        height: 267px
-    }
 
     label {
         display: inline-block;
         width: 5em;
     }
 
-    /*svg {*/
-    /*background-color: #1c2124;*/
-    /*}*/
 
     rect {
         stroke: #E6E6E6;
@@ -210,7 +155,7 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <section class="jumbotron">
     <div class="container">
@@ -394,26 +339,31 @@
                 <p><i>Для збільшення, наведіть мишею на карту.</i></p>
             </div>
 
-            <div class="mobile">
-                <p><i>Для збільшення, клікніть на карту.</i></p>
-            </div>
-
-        </div>
+          </div>
     </div>
 </div>
 
+
+<div class="desktop">
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
-
-            <img id="thumb" style="width:100%;" src="svg/oligarkhs.svg">
-
+            <img  style="width:100%;" src="svg/oligarkhs.svg">
         </div>
     </div>
 </div>
+</div>
+
+<div class="mobile">
+    <div class="container-fluid">
+            <img style="width:100%;" src="svg/testmob.png">
+     </div>
+</div>
+
 
 
 <div class="container-fluid">
+    <!--<div id="myshape" style="width: 80%"></div>-->
     <div class="row">
         <div class="col-sm-offset-2 col-xs-12 col-sm-10 col-md-6 col-lg-6 col-xl-6">
 

@@ -342,7 +342,7 @@ p.map-text span {
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .mobile {
     display: block;
   }
@@ -352,7 +352,7 @@ p.map-text span {
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .desktop {
     display: none;
   }
@@ -731,4 +731,6 @@ div.tooltips {
   pointer-events: none;
 }
 
-
+#myshape {
+  position: relative;
+}
