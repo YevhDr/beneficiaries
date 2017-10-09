@@ -59,7 +59,7 @@ d3.csv('data/heatmap_d3.csv', function ( response ) {
         })
         .orient("left");
 
-    var colors = ['#b2182b', '#d6604d', '#f4a582', '#fddbc7', '#f7f7f7', '#d1e5f0', '#92c5de', '#4393c3', '#2166ac'];
+    var colors = ['#d53e4f ','#e36b6f ','#ef9091 ','#f8b6b4 ','#fddbd9 ','#ffffff ','#d5e7f1 ','#b1cee4 ','#8db6d7 ','#659fca ','#3288bd ']
 
     var colorScale = d3.scale.quantile()
         .domain([-15, 0, 40])
