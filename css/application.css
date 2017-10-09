@@ -687,10 +687,17 @@ div.tooltips {
   border-radius: 3px;
   pointer-events: none; }
 
-#myshape {
-  position: relative; }
-
 .bar-axis {
   font-size: 1.2em !important; }
+
+.maptips {
+  line-height: 1;
+  font: 14px sans-serif;
+  padding: 5px;
+  background: rgba(243, 243, 243, 0.8);
+  color: #3f4042;
+  border-bottom: 1px;
+  position: absolute;
+  opacity: 1; }
 
 /*# sourceMappingURL=application.css.map */
