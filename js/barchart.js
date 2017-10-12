@@ -1,6 +1,6 @@
 
     //Appends chart headline
-    d3.select(".g-hed").text("Лише бізнес чи й політика");
+    d3.select(".g-hed").text("Лише бізнес - чи й політика?");
 
     //Appends chart intro text
     d3.select(".g-intro").html("Бізнесмени, з чиїми компаніями повʼязано найбільше місцевих депутатів");
