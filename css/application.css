@@ -574,10 +574,6 @@ h6 {
 .bars:hover {
   fill: #8c510a; }
 
-.source {
-  border-bottom: 20px !important;
-  margin-left: 15%; }
-
 p.h-intro {
   margin-left: 10%;
   text-align: center;
@@ -699,5 +695,8 @@ div.tooltips {
   border-bottom: 1px;
   position: absolute;
   opacity: 1; }
+
+p.metod {
+  font-size: 1em !important; }
 
 /*# sourceMappingURL=application.css.map */

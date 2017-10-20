@@ -222,7 +222,7 @@
             <div class="source"><span class="h-source-bold"></span><span class="h-source-reg"></span></div>
             <!--<img class="picture" src="img/graph-01.jpg">-->
             <div class="col-sm-offset-2">
-                <button type="button" class="btn" data-toggle="collapse" data-target="#demo">Докладніше про методологію
+                <button type="button" class="btn" data-toggle="collapse" data-target="#demo">Детальніше про те, як читати графіку
                 </button>
             </div>
             <div id="demo" class="collapse">
@@ -369,6 +369,41 @@
             <p>Однак, навіть ця неповна картина дає непоганий опис реального стану справ. Якби реєстр бенефіціарів та
                 декларації депутатів були і досі закритими, ми не змогли б зробити це дослідження.</p>
         </div>
+    </div>
+</div>
+
+<div class="col-sm-offset-2">
+    <button type="button" class="btn" data-toggle="collapse" data-target="#demo2">Методологія дослідження</button>
+</div>
+<div id="demo2" class="collapse">
+
+
+<div class="source">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+    <h6>Докладніше про технічний бік справи</h6>
+
+    <p class="metod">Ми взяли декларації депутатів обласних, районних і міських рад - і подивилися, від яких компаній та банків вони ортимували гроші. Враховували також і кредити. Далі дивилися у відкритому реєстрі засновників бізнесу, хто власник компанії, від якої отримав дохід депутат. </p>
+    <p class="metod">Для прикладу візьмемо <a style="border-bottom: 1px dashed;" href="https://public.nazk.gov.ua/declaration/44114036-2ab1-4164-9c88-514d9366eb8f"> інформацію про доходи </a> депутата Запорізької міської ради Руслана Божка. Червоним ми виділили коди ЄДПРПОУ юридичних осіб, від яких депутат отримував гроші.</p>
+    <img style ="margin-bottom: 10px;" class= "img-responsive" src="img/1.png">
+
+    <p class="metod">Якщо ми подивимося на першу з цих юридичних осіб, а це ПАТ “Запоріжсталь” <a style="border-bottom: 1px dashed;" href="https://online.minjust.gov.ua/edr-search/">на сайті Мінюсту</a>, побачимо, що її кінцевим бенефіціаром є Рінат Ахметов.</p>
+     <img style ="margin-bottom: 10px;"  class= "img-responsive" src="img/1.png">
+
+    <p class="metod">Але зрозуміло, що перевіряти дані вручну вимагало б забагато часу та зусиль. Тому спочатку автоматично <a style="border-bottom: 1px dashed;" href="http://www.cvk.gov.ua/vm_2015/">з сайту ЦВК </a> ми зібрали списки місцевих депутатів усіх рад. У списку вказане прізвище, імя та по-батькові  депутата, його партійність та місцевість, де він обраний.  </p>
+
+                <p class="metod">Після того – за допомогою <a style="border-bottom: 1px dashed;" href="https://public.nazk.gov.ua/public_api"> офіційного API</a> сайту НАЗК з електронними деклараціями запитували унікальний ідентифікатор декларації кожного депутата. Наприклад, <a style="border-bottom: 1px dashed;" href="https://public-api.nazk.gov.ua/v1/declaration/?q=%D0%91%D0%BE%D0%B6%D0%BA%D0%BE%20%D0%A0%D1%83%D1%81%D0%BB%D0%B0%D0%BD%20%D0%90%D0%BD%D0%B0%D1%82%D0%BE%D0%BB%D1%96%D0%B9%D0%BE%D0%B2%D0%B8%D1%87"> за лінком можна дізнатися</a>, що унікальний код декларації Руслана Божка – "44114036-2ab1-4164-9c88-514d9366eb8f".  Нарешті, за цим унікальним кодом ми можемо отримати декларацію Руслана Божка у зрозумілому для машини (але не для людини) <a style="border-bottom: 1px dashed;" href="https://public-api.nazk.gov.ua/v1/declaration/44114036-2ab1-4164-9c88-514d9366eb8f">вигляді</a>. Якщо автоматично проробити такий фокус для ПІБ кожного місцевого депутата, врешті-решт ми отримаємо повну базу їхніх декларацій.</p>
+
+                <p class="metod">Аби не робити запити до Мінюсту вручну, ми скористалися <a style="border-bottom: 1px dashed;" href="http://data.gov.ua/passport/73cfe78e-89ef-4f06-b3ab-eb5f16aea237">викладеним у форматі відкритих даних архівом</a>. Скрипти, що переводять формат, в якому дані викладено, у звичний табличний формат, можна <a style="border-bottom: 1px dashed;" href="https://github.com/zefmud/companies_registry">знайти за лінком</a>. Після того лишалося тільки поєднати базу декларацій із архівом реєстру за ідентифікаційним кодом. Щоправда, з огляду на нестандартизовані дані реєстру ми змушені були вручну чистити дані про кінцевих бенефіціарів за допомогою програми <a style="border-bottom: 1px dashed;" href="http://openrefine.org/">OpenRefine</a>.</p>
+
+                <p class="metod">Додаткова проблема полягає в тому, що надійного автоматичного способу виключити повні збіги ПІБ у реєстрі декларацій немає. Тому ми уникали висновків про те, що конкретний депутат якимось чином пов’язаний із олігархом, і зосередилися на пошуку загальних тенденцій. </p>
+            </div>
+</div>
+       </div>
+
+
+
     </div>
 </div>
 
